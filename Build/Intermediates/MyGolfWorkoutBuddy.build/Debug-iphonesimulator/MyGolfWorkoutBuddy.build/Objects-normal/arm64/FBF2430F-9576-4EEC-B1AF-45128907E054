@@ -1,8 +1,0 @@
-{
-  "" : {
-    "pch" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/arm64/MyGolfWorkoutBuddy-primary-Bridging-header.pch"
-  },
-  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/Views/GolfRoundDetailView.swift" : {
-    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/arm64/GolfRoundDetailView.__XCPREVIEW_THUNKSUFFIX__.preview-thunk.o"
-  }
-}

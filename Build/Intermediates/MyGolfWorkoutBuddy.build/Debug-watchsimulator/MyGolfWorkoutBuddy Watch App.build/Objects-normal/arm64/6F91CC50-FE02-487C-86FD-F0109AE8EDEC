@@ -1,8 +1,0 @@
-{
-  "" : {
-    "pch" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchsimulator/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddy Watch App-primary-Bridging-header.pch"
-  },
-  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy Watch App/Views/ContentView.swift" : {
-    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchsimulator/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.__XCPREVIEW_THUNKSUFFIX__.preview-thunk.o"
-  }
-}
