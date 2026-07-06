@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'MyGolfWorkoutBuddy' in project 'MyGolfWorkoutBuddy'
+➜ Explicit dependency on target 'MyGolfWorkoutBuddy Watch App' in project 'MyGolfWorkoutBuddy'
+Target 'MyGolfWorkoutBuddy Watch App' in project 'MyGolfWorkoutBuddy' (no dependencies)

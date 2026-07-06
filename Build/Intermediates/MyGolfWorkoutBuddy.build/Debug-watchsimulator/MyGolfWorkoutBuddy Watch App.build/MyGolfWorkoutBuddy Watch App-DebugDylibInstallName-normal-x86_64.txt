@@ -1,0 +1,1 @@
+@rpath/MyGolfWorkoutBuddy Watch App.debug.dylib

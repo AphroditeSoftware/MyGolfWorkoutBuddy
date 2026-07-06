@@ -1,0 +1,89 @@
+{
+  "" : {
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddy-primary.dia",
+    "emit-module-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddy-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddy-primary-emit-module.dia",
+    "pch" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddy-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddy-primary.swiftdeps"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/Models/GolfRound.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRound~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/MyGolfWorkoutBuddyApp.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/MyGolfWorkoutBuddyApp~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/Services/HealthKitManager.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/HealthKitManager~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/ViewModels/GolfRoundsStore.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundsStore~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/Views/ContentView.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/ContentView~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/Views/GolfRoundDetailView.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundDetailView~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/Views/GolfRoundRow.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-iphonesimulator/MyGolfWorkoutBuddy.build/Objects-normal/x86_64/GolfRoundRow~partial.swiftmodule"
+  }
+}

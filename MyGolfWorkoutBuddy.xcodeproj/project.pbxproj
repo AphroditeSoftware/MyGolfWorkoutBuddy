@@ -1,0 +1,1054 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3D949232FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C3D949222FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3D9490D2FFC22540003F3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D948F72FFC22520003F3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3D948FE2FFC22520003F3D8;
+			remoteInfo = MyGolfWorkoutBuddy;
+		};
+		C3D949172FFC22540003F3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D948F72FFC22520003F3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3D948FE2FFC22520003F3D8;
+			remoteInfo = MyGolfWorkoutBuddy;
+		};
+		C3D949242FFC22540003F3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D948F72FFC22520003F3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3D949212FFC22540003F3D8;
+			remoteInfo = "MyGolfWorkoutBuddy Watch App";
+		};
+		C3D949322FFC22540003F3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D948F72FFC22520003F3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3D949212FFC22540003F3D8;
+			remoteInfo = "MyGolfWorkoutBuddy Watch App";
+		};
+		C3D9493C2FFC22540003F3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D948F72FFC22520003F3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3D949212FFC22540003F3D8;
+			remoteInfo = "MyGolfWorkoutBuddy Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3D949482FFC22540003F3D8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C3D949232FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C3D948FF2FFC22520003F3D8 /* MyGolfWorkoutBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGolfWorkoutBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D9490C2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGolfWorkoutBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D949162FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGolfWorkoutBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D949222FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyGolfWorkoutBuddy Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D949312FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyGolfWorkoutBuddy Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D9493B2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyGolfWorkoutBuddy Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C3D949012FFC22520003F3D8 /* MyGolfWorkoutBuddy */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyGolfWorkoutBuddy;
+			sourceTree = "<group>";
+		};
+		C3D9490F2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyGolfWorkoutBuddyTests;
+			sourceTree = "<group>";
+		};
+		C3D949192FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyGolfWorkoutBuddyUITests;
+			sourceTree = "<group>";
+		};
+		C3D949262FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "MyGolfWorkoutBuddy Watch App";
+			sourceTree = "<group>";
+		};
+		C3D949342FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "MyGolfWorkoutBuddy Watch AppTests";
+			sourceTree = "<group>";
+		};
+		C3D9493E2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "MyGolfWorkoutBuddy Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3D948FC2FFC22520003F3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949092FFC22540003F3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949132FFC22540003F3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D9491F2FFC22540003F3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D9492E2FFC22540003F3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949382FFC22540003F3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3D948F62FFC22520003F3D8 = {
+			isa = PBXGroup;
+			children = (
+				C3D949012FFC22520003F3D8 /* MyGolfWorkoutBuddy */,
+				C3D9490F2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests */,
+				C3D949192FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests */,
+				C3D949262FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */,
+				C3D949342FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests */,
+				C3D9493E2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests */,
+				C3D949002FFC22520003F3D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3D949002FFC22520003F3D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3D948FF2FFC22520003F3D8 /* MyGolfWorkoutBuddy.app */,
+				C3D9490C2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests.xctest */,
+				C3D949162FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests.xctest */,
+				C3D949222FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app */,
+				C3D949312FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests.xctest */,
+				C3D9493B2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D949492FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy" */;
+			buildPhases = (
+				C3D948FB2FFC22520003F3D8 /* Sources */,
+				C3D948FC2FFC22520003F3D8 /* Frameworks */,
+				C3D948FD2FFC22520003F3D8 /* Resources */,
+				C3D949482FFC22540003F3D8 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3D949252FFC22540003F3D8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C3D949012FFC22520003F3D8 /* MyGolfWorkoutBuddy */,
+			);
+			name = MyGolfWorkoutBuddy;
+			packageProductDependencies = (
+			);
+			productName = MyGolfWorkoutBuddy;
+			productReference = C3D948FF2FFC22520003F3D8 /* MyGolfWorkoutBuddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3D9490B2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D9494C2FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddyTests" */;
+			buildPhases = (
+				C3D949082FFC22540003F3D8 /* Sources */,
+				C3D949092FFC22540003F3D8 /* Frameworks */,
+				C3D9490A2FFC22540003F3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3D9490E2FFC22540003F3D8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C3D9490F2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests */,
+			);
+			name = MyGolfWorkoutBuddyTests;
+			packageProductDependencies = (
+			);
+			productName = MyGolfWorkoutBuddyTests;
+			productReference = C3D9490C2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C3D949152FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D9494F2FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddyUITests" */;
+			buildPhases = (
+				C3D949122FFC22540003F3D8 /* Sources */,
+				C3D949132FFC22540003F3D8 /* Frameworks */,
+				C3D949142FFC22540003F3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3D949182FFC22540003F3D8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C3D949192FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests */,
+			);
+			name = MyGolfWorkoutBuddyUITests;
+			packageProductDependencies = (
+			);
+			productName = MyGolfWorkoutBuddyUITests;
+			productReference = C3D949162FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C3D949212FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D949452FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch App" */;
+			buildPhases = (
+				C3D9491E2FFC22540003F3D8 /* Sources */,
+				C3D9491F2FFC22540003F3D8 /* Frameworks */,
+				C3D949202FFC22540003F3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C3D949262FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */,
+			);
+			name = "MyGolfWorkoutBuddy Watch App";
+			packageProductDependencies = (
+			);
+			productName = "MyGolfWorkoutBuddy Watch App";
+			productReference = C3D949222FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3D949302FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D949522FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch AppTests" */;
+			buildPhases = (
+				C3D9492D2FFC22540003F3D8 /* Sources */,
+				C3D9492E2FFC22540003F3D8 /* Frameworks */,
+				C3D9492F2FFC22540003F3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3D949332FFC22540003F3D8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C3D949342FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests */,
+			);
+			name = "MyGolfWorkoutBuddy Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "MyGolfWorkoutBuddy Watch AppTests";
+			productReference = C3D949312FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C3D9493A2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D949552FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch AppUITests" */;
+			buildPhases = (
+				C3D949372FFC22540003F3D8 /* Sources */,
+				C3D949382FFC22540003F3D8 /* Frameworks */,
+				C3D949392FFC22540003F3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3D9493D2FFC22540003F3D8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C3D9493E2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests */,
+			);
+			name = "MyGolfWorkoutBuddy Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "MyGolfWorkoutBuddy Watch AppUITests";
+			productReference = C3D9493B2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3D948F72FFC22520003F3D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					C3D948FE2FFC22520003F3D8 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					C3D9490B2FFC22540003F3D8 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = C3D948FE2FFC22520003F3D8;
+					};
+					C3D949152FFC22540003F3D8 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = C3D948FE2FFC22520003F3D8;
+					};
+					C3D949212FFC22540003F3D8 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					C3D949302FFC22540003F3D8 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = C3D949212FFC22540003F3D8;
+					};
+					C3D9493A2FFC22540003F3D8 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = C3D949212FFC22540003F3D8;
+					};
+				};
+			};
+			buildConfigurationList = C3D948FA2FFC22520003F3D8 /* Build configuration list for PBXProject "MyGolfWorkoutBuddy" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3D948F62FFC22520003F3D8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C3D949002FFC22520003F3D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */,
+				C3D9490B2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests */,
+				C3D949152FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests */,
+				C3D949212FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */,
+				C3D949302FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests */,
+				C3D9493A2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3D948FD2FFC22520003F3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D9490A2FFC22540003F3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949142FFC22540003F3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949202FFC22540003F3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D9492F2FFC22540003F3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949392FFC22540003F3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3D948FB2FFC22520003F3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949082FFC22540003F3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949122FFC22540003F3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D9491E2FFC22540003F3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D9492D2FFC22540003F3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D949372FFC22540003F3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3D9490E2FFC22540003F3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */;
+			targetProxy = C3D9490D2FFC22540003F3D8 /* PBXContainerItemProxy */;
+		};
+		C3D949182FFC22540003F3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */;
+			targetProxy = C3D949172FFC22540003F3D8 /* PBXContainerItemProxy */;
+		};
+		C3D949252FFC22540003F3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3D949212FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */;
+			targetProxy = C3D949242FFC22540003F3D8 /* PBXContainerItemProxy */;
+		};
+		C3D949332FFC22540003F3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3D949212FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */;
+			targetProxy = C3D949322FFC22540003F3D8 /* PBXContainerItemProxy */;
+		};
+		C3D9493D2FFC22540003F3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3D949212FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */;
+			targetProxy = C3D9493C2FFC22540003F3D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C3D949432FFC22540003F3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C3D949442FFC22540003F3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C3D949462FFC22540003F3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MyGolfWorkoutBuddy Watch App/MyGolfWorkoutBuddy Watch App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your heart rate and workout data to power live stats during your round.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy saves your golf workouts (walking and swings) to Health, excluding cart rides.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "MyGolfWorkoutBuddy uses motion data to tell walking and golf swings apart from riding in a cart.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.aphroditesoftwareinc.mygolfworkoutbuddy;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		C3D949472FFC22540003F3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MyGolfWorkoutBuddy Watch App/MyGolfWorkoutBuddy Watch App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your heart rate and workout data to power live stats during your round.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy saves your golf workouts (walking and swings) to Health, excluding cart rides.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "MyGolfWorkoutBuddy uses motion data to tell walking and golf swings apart from riding in a cart.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.aphroditesoftwareinc.mygolfworkoutbuddy;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		C3D9494A2FFC22540003F3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyGolfWorkoutBuddy/MyGolfWorkoutBuddy.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C3D9494B2FFC22540003F3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyGolfWorkoutBuddy/MyGolfWorkoutBuddy.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3D9494D2FFC22540003F3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGolfWorkoutBuddy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyGolfWorkoutBuddy";
+			};
+			name = Debug;
+		};
+		C3D9494E2FFC22540003F3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGolfWorkoutBuddy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyGolfWorkoutBuddy";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3D949502FFC22540003F3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = MyGolfWorkoutBuddy;
+			};
+			name = Debug;
+		};
+		C3D949512FFC22540003F3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aphroditesoftwareinc.mygolfworkoutbuddyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = MyGolfWorkoutBuddy;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3D949532FFC22540003F3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aphroditesoftwareinc.mygolfworkoutbuddy-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGolfWorkoutBuddy Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyGolfWorkoutBuddy Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		C3D949542FFC22540003F3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aphroditesoftwareinc.mygolfworkoutbuddy-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyGolfWorkoutBuddy Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyGolfWorkoutBuddy Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		C3D949562FFC22540003F3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aphroditesoftwareinc.mygolfworkoutbuddy-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "MyGolfWorkoutBuddy Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		C3D949572FFC22540003F3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aphroditesoftwareinc.mygolfworkoutbuddy-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "MyGolfWorkoutBuddy Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3D948FA2FFC22520003F3D8 /* Build configuration list for PBXProject "MyGolfWorkoutBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D949432FFC22540003F3D8 /* Debug */,
+				C3D949442FFC22540003F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D949452FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D949462FFC22540003F3D8 /* Debug */,
+				C3D949472FFC22540003F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D949492FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D9494A2FFC22540003F3D8 /* Debug */,
+				C3D9494B2FFC22540003F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D9494C2FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D9494D2FFC22540003F3D8 /* Debug */,
+				C3D9494E2FFC22540003F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D9494F2FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D949502FFC22540003F3D8 /* Debug */,
+				C3D949512FFC22540003F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D949522FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D949532FFC22540003F3D8 /* Debug */,
+				C3D949542FFC22540003F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D949552FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D949562FFC22540003F3D8 /* Debug */,
+				C3D949572FFC22540003F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3D948F72FFC22520003F3D8 /* Project object */;
+}

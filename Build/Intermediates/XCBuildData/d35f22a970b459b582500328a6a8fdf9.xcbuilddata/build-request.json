@@ -1,0 +1,67 @@
+{
+  "buildCommand" : {
+    "command" : "preview",
+    "style" : "xojit"
+  },
+  "buildDescriptionID" : "d8367ecb4c9357ec42f815f6fcccd5d6",
+  "configuredTargets" : [
+    {
+      "guid" : "e4df8653174fb653a6cb857a45a3aa12dfae8d8ab82b3b35d1671058f50a9c24"
+    }
+  ],
+  "containerPath" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "hostTargetedPlatform" : null,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator26.5",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates",
+      "buildProductsPath" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Products",
+      "derivedDataPath" : "/Users/janenepappas/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/janenepappas/Library/Developer/Xcode/DerivedData/MyGolfWorkoutBuddy-bipktlsomklhtqdqzfvwakbllkfo/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/janenepappas/Library/Developer/Xcode/DerivedData/MyGolfWorkoutBuddy-bipktlsomklhtqdqzfvwakbllkfo/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone18,1",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "26.5",
+          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPhone18,1",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "CLANG_COVERAGE_MAPPING" : "YES",
+          "CLANG_PROFILE_DATA_DIRECTORY" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/CodeCoverage/ProfileData",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES",
+          "TARGET_DEVICE_IDENTIFIER" : "447B4AA7-E371-4CAC-B104-FCB2ABC42D81",
+          "TARGET_DEVICE_MODEL" : "iPhone18,1",
+          "TARGET_DEVICE_OS_VERSION" : "26.5",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy/Views/GolfRoundRow.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 21
+        }
+      }
+    ]
+  },
+  "version": 1
+}

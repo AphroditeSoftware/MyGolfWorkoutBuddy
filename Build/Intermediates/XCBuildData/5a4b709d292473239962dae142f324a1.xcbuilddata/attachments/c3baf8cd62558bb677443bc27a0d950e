@@ -1,0 +1,69 @@
+{
+  "" : {
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddy Watch App-primary.dia",
+    "emit-module-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddy Watch App-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddy Watch App-primary-emit-module.dia",
+    "pch" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddy Watch App-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddy Watch App-primary.swiftdeps"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy Watch App/MyGolfWorkoutBuddyApp.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MyGolfWorkoutBuddyApp~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy Watch App/Services/HealthKitManager.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/HealthKitManager~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy Watch App/Services/MotionClassifier.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/MotionClassifier~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy Watch App/ViewModels/WorkoutManager.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/WorkoutManager~partial.swiftmodule"
+  },
+  "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/MyGolfWorkoutBuddy Watch App/Views/ContentView.swift" : {
+    "const-values" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/janenepappas/iOS/MyGolfWorkoutBuddy/Build/Intermediates/MyGolfWorkoutBuddy.build/Debug-watchos/MyGolfWorkoutBuddy Watch App.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  }
+}
