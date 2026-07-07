@@ -10,6 +10,7 @@
 
 import SwiftUI
 import Charts
+import UIKit
 
 struct GolfRoundDetailView: View {
     let round: GolfRound
@@ -21,6 +22,8 @@ struct GolfRoundDetailView: View {
 
     @State private var speedSamples: [SpeedSample] = []
     @State private var isLoadingSpeed = true
+
+    @State private var zoomedChart: ZoomableChart?
 
     var body: some View {
         List {
@@ -100,9 +103,19 @@ struct GolfRoundDetailView: View {
             speedSamples = await speed
             isLoadingSpeed = false
         }
+        .fullScreenCover(item: $zoomedChart) { chart in
+            switch chart {
+            case .heartRate:
+                ChartZoomView(title: "Heart Rate") { heartRateChartContent }
+            case .speed:
+                ChartZoomView(title: "Speed") { speedChartContent }
+            }
+        }
     }
 
-    private var heartRateChart: some View {
+    /// The heart rate chart itself, without any fixed size, so it can be shown
+    /// inline or filled into the full-screen zoom view.
+    private var heartRateChartContent: some View {
         Chart(heartRateSamples) { sample in
             LineMark(
                 x: .value("Time", sample.date),
@@ -112,8 +125,15 @@ struct GolfRoundDetailView: View {
             .interpolationMethod(.catmullRom)
         }
         .chartYScale(domain: .automatic(includesZero: false))
-        .frame(height: 160)
-        .padding(.vertical, 4)
+    }
+
+    private var heartRateChart: some View {
+        heartRateChartContent
+            .frame(height: 160)
+            .overlay(alignment: .topTrailing) { expandHint }
+            .contentShape(Rectangle())
+            .onTapGesture { openChart(.heartRate) }
+            .padding(.vertical, 4)
     }
 
     /// A speed sample tagged with which contiguous run (between cart pauses) it
@@ -138,33 +158,42 @@ struct GolfRoundDetailView: View {
         }
     }
 
+    /// The speed chart itself, without any fixed size, so it can be shown inline
+    /// or filled into the full-screen zoom view.
+    private var speedChartContent: some View {
+        Chart {
+            // Shade the stretches the round was paused for a cart ride so the
+            // line bridging that gap isn't mistaken for actual movement.
+            ForEach(round.cartIntervals, id: \.self) { interval in
+                RectangleMark(
+                    xStart: .value("Cart start", interval.start),
+                    xEnd: .value("Cart end", interval.end)
+                )
+                .foregroundStyle(.gray.opacity(0.18))
+            }
+
+            // Split the line into a separate series on each side of a cart
+            // gap so it isn't drawn straight across the paused stretch.
+            ForEach(segmentedSpeedSamples) { item in
+                LineMark(
+                    x: .value("Time", item.sample.date),
+                    y: .value("mph", item.sample.milesPerHour),
+                    series: .value("Segment", item.segment)
+                )
+                .foregroundStyle(.green)
+                .interpolationMethod(.catmullRom)
+            }
+        }
+        .chartYScale(domain: .automatic(includesZero: true))
+    }
+
     private var speedChart: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Chart {
-                // Shade the stretches the round was paused for a cart ride so the
-                // line bridging that gap isn't mistaken for actual movement.
-                ForEach(round.cartIntervals, id: \.self) { interval in
-                    RectangleMark(
-                        xStart: .value("Cart start", interval.start),
-                        xEnd: .value("Cart end", interval.end)
-                    )
-                    .foregroundStyle(.gray.opacity(0.18))
-                }
-
-                // Split the line into a separate series on each side of a cart
-                // gap so it isn't drawn straight across the paused stretch.
-                ForEach(segmentedSpeedSamples) { item in
-                    LineMark(
-                        x: .value("Time", item.sample.date),
-                        y: .value("mph", item.sample.milesPerHour),
-                        series: .value("Segment", item.segment)
-                    )
-                    .foregroundStyle(.green)
-                    .interpolationMethod(.catmullRom)
-                }
-            }
-            .chartYScale(domain: .automatic(includesZero: true))
-            .frame(height: 160)
+            speedChartContent
+                .frame(height: 160)
+                .overlay(alignment: .topTrailing) { expandHint }
+                .contentShape(Rectangle())
+                .onTapGesture { openChart(.speed) }
 
             if !round.cartIntervals.isEmpty {
                 Label("Shaded time was spent in a cart (paused).", systemImage: "car.fill")
@@ -173,6 +202,14 @@ struct GolfRoundDetailView: View {
             }
         }
         .padding(.vertical, 4)
+    }
+
+    /// Small affordance hinting the chart can be tapped to open full screen.
+    private var expandHint: some View {
+        Image(systemName: "arrow.up.left.and.arrow.down.right")
+            .font(.caption)
+            .foregroundStyle(.secondary)
+            .padding(6)
     }
 
     private func statRow(systemImage: String, title: String, value: String, imageColor: Color? = nil) -> some View {
@@ -189,11 +226,132 @@ struct GolfRoundDetailView: View {
         }
     }
 
+    /// Presents the full-screen chart without the slide-up animation, so the
+    /// detail view isn't visible behind it. The rotation to landscape happens in
+    /// `ChartZoomView.onAppear`, once the opaque cover is actually on screen.
+    private func openChart(_ chart: ZoomableChart) {
+        var transaction = Transaction()
+        transaction.disablesAnimations = true
+        withTransaction(transaction) { zoomedChart = chart }
+    }
+
     private func relativeOffset(for timestamp: Date) -> String {
         let seconds = Int(timestamp.timeIntervalSince(round.startDate))
         let minutes = seconds / 60
         let remainingSeconds = seconds % 60
         return String(format: "%d:%02d into round", minutes, remainingSeconds)
+    }
+}
+
+/// Identifies which chart is currently shown full screen.
+private enum ZoomableChart: Identifiable {
+    case heartRate
+    case speed
+    var id: Self { self }
+}
+
+/// Forces the app (and device) into `mask`, overriding the user's Rotation Lock,
+/// so the full-screen chart can be shown in landscape and portrait restored after.
+private func forceOrientation(_ mask: UIInterfaceOrientationMask) {
+    AppDelegate.orientationLock = mask
+    guard let scene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else { return }
+    scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask))
+    var controller = scene.keyWindow?.rootViewController
+    while let presented = controller?.presentedViewController {
+        controller = presented
+    }
+    controller?.setNeedsUpdateOfSupportedInterfaceOrientations()
+}
+
+/// Presents a single chart full screen with pinch-to-zoom and drag-to-pan, plus
+/// a back chevron in the upper-left to return.
+private struct ChartZoomView<Content: View>: View {
+    let title: String
+    @ViewBuilder var content: Content
+
+    @Environment(\.dismiss) private var dismiss
+
+    @State private var scale: CGFloat = 1
+    @State private var lastScale: CGFloat = 1
+    @State private var offset: CGSize = .zero
+    @State private var lastOffset: CGSize = .zero
+    // Fades the chart in over the rotation so the opaque background covers the
+    // detail view immediately while the contents ease in (rather than snapping).
+    @State private var contentVisible = false
+
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            Color(.systemBackground)
+                .ignoresSafeArea()
+
+            content
+                .padding(24)
+                .scaleEffect(scale)
+                .offset(offset)
+                .gesture(transformGesture)
+                .onTapGesture(count: 2) {
+                    withAnimation(.spring) { resetTransform() }
+                }
+                .opacity(contentVisible ? 1 : 0)
+
+            VStack(alignment: .leading, spacing: 8) {
+                Button {
+                    // Rotate back to portrait first, then dismiss, so the detail
+                    // view isn't briefly revealed in landscape.
+                    forceOrientation(.portrait)
+                    Task {
+                        try? await Task.sleep(for: .seconds(0.35))
+                        dismiss()
+                    }
+                } label: {
+                    Image(systemName: "chevron.backward")
+                        .font(.title2.weight(.semibold))
+                        .padding(10)
+                        .background(.ultraThinMaterial, in: Circle())
+                }
+                .accessibilityLabel("Back")
+
+                Text(title)
+                    .font(.headline)
+
+                Text("Pinch to zoom · double-tap to reset")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+            .padding()
+            .opacity(contentVisible ? 1 : 0)
+        }
+        .onAppear {
+            // Rotate only after the opaque cover is on screen, so the rotation
+            // doesn't snapshot (and flash) the detail view behind it.
+            DispatchQueue.main.async { forceOrientation(.landscape) }
+            withAnimation(.easeOut(duration: 0.45)) { contentVisible = true }
+        }
+        // Safety net in case the cover is dismissed without the back button.
+        .onDisappear { forceOrientation(.portrait) }
+    }
+
+    private var transformGesture: some Gesture {
+        let magnify = MagnifyGesture()
+            .onChanged { scale = max(0.5, lastScale * $0.magnification) }
+            .onEnded { _ in lastScale = scale }
+        let drag = DragGesture()
+            .onChanged {
+                offset = CGSize(
+                    width: lastOffset.width + $0.translation.width,
+                    height: lastOffset.height + $0.translation.height
+                )
+            }
+            .onEnded { _ in lastOffset = offset }
+        return magnify.simultaneously(with: drag)
+    }
+
+    private func resetTransform() {
+        scale = 1
+        lastScale = 1
+        offset = .zero
+        lastOffset = .zero
     }
 }
 

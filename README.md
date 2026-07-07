@@ -11,7 +11,7 @@ The Watch app starts one `HKWorkoutSession` (activity type `.golf`, location `.o
 
 Both walking and swinging happen while the session is running, so both count toward the saved workout's duration and active energy; only cart time is paused out.
 
-The iPhone app doesn't talk to the Watch app directly — it reads whatever golf workouts have landed in HealthKit and presents them as a list, with a detail screen per round (summary stats plus Swift Charts heart-rate and walking-speed graphs). It opens on a brief branded splash screen that fades into the list while HealthKit loads. Because cart time is paused out of the workout, the speed chart breaks the line across those gaps and shades them, using the workout's pause/resume events.
+The iPhone app doesn't talk to the Watch app directly — it reads whatever golf workouts have landed in HealthKit and presents them as a list, with a detail screen per round (summary stats plus Swift Charts heart-rate and walking-speed graphs). It opens on a brief branded splash screen that fades into the list while HealthKit loads. Because cart time is paused out of the workout, the speed chart breaks the line across those gaps and shades them, using the workout's pause/resume events. Tapping either chart opens it full screen in landscape (forced, so it works even with the device's Rotation Lock on), where it can be pinch-zoomed and panned; the back chevron rotates back to portrait and returns. The rest of the app stays portrait.
 
 ## Project structure
 
@@ -33,9 +33,11 @@ MyGolfWorkoutBuddy/                       # iPhone companion app
 │   ├── GolfRoundRow.swift                # Row: date, duration, swing count, distance, calories
 │   ├── GolfRoundDetailView.swift         # Full stats + per-swing timestamps + average heart rate +
 │   │                                      # Swift Charts heart rate and walking-speed graphs (the speed
-│   │                                      # chart breaks the line and shades cart-paused stretches)
+│   │                                      # chart breaks the line and shades cart-paused stretches); tap a
+│   │                                      # graph for a full-screen landscape ChartZoomView (pinch-zoom and pan)
 │   └── SplashView.swift                  # Launch splash + RootView that shows it briefly, then fades to ContentView
-├── MyGolfWorkoutBuddyApp.swift           # @main App; hosts RootView (splash → ContentView)
+├── MyGolfWorkoutBuddyApp.swift           # @main App; hosts RootView; AppDelegate governs orientation
+│                                          # (portrait app, forced landscape for the full-screen chart)
 └── MyGolfWorkoutBuddy.entitlements       # HealthKit (read)
 
 Colors.swift                              # Shared color constants (e.g. Color.calorieFlame) common to both apps
