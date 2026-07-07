@@ -4,6 +4,8 @@
 //
 //  Created by Janene Pappas on 7/6/26.
 //
+//  watchOS app entry point; shows ContentView in the root window group.
+//
 
 import SwiftUI
 

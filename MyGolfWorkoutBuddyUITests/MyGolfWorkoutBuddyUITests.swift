@@ -4,6 +4,8 @@
 //
 //  Created by Janene Pappas on 7/6/26.
 //
+//  UI test target for the iPhone app; currently the Xcode template stubs.
+//
 
 import XCTest
 

@@ -2,6 +2,11 @@
 //  HealthKitManager.swift
 //  MyGolfWorkoutBuddy Watch App
 //
+//  Created by Janene Pappas on 7/6/26.
+//
+//  Wraps the app's HKHealthStore: requests authorization to save golf workouts
+//  and read live heart rate, energy, and distance.
+//
 
 import Foundation
 import HealthKit

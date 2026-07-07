@@ -2,6 +2,11 @@
 //  ContentView.swift
 //  MyGolfWorkoutBuddy Watch App
 //
+//  Created by Janene Pappas on 7/6/26.
+//
+//  Root watch UI: start a round, then show live time and swing/calorie/heart-rate
+//  tiles with an End Round button.
+//
 
 import SwiftUI
 

@@ -2,9 +2,10 @@
 //  MotionClassifier.swift
 //  MyGolfWorkoutBuddy Watch App
 //
-//  Classifies what the wearer is doing right now using CoreMotion so the
-//  workout can auto pause during a cart ride and count golf swings, without
-//  any manual input from the golfer.
+//  Created by Janene Pappas on 7/6/26.
+//
+//  CoreMotion classifier: detects cart rides and counts golf swings, reporting
+//  state changes and swings to a delegate.
 //
 
 import Foundation

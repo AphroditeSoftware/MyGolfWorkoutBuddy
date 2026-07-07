@@ -2,7 +2,10 @@
 //  Colors.swift
 //  MyGolfWorkoutBuddy
 //
-//  Shared color constants used across the iPhone and Watch apps.
+//  Created by Janene Pappas on 7/7/26.
+//
+//  Shared color constants (e.g. Color.calorieFlame) used by both the iPhone
+//  and Watch apps.
 //
 
 import SwiftUI

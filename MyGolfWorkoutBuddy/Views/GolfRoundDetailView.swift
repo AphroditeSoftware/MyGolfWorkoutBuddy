@@ -2,6 +2,11 @@
 //  GolfRoundDetailView.swift
 //  MyGolfWorkoutBuddy
 //
+//  Created by Janene Pappas on 7/6/26.
+//
+//  Detail screen for one round: summary stats, heart-rate and walking-speed
+//  charts (with cart time shaded), and the list of detected swings.
+//
 
 import SwiftUI
 import Charts
@@ -13,6 +18,9 @@ struct GolfRoundDetailView: View {
     @State private var averageHeartRate: Double?
     @State private var heartRateSamples: [HeartRateSample] = []
     @State private var isLoadingHeartRate = true
+
+    @State private var speedSamples: [SpeedSample] = []
+    @State private var isLoadingSpeed = true
 
     var body: some View {
         List {
@@ -46,7 +54,22 @@ struct GolfRoundDetailView: View {
                     }
                 }
             }
-            
+
+            Section("Speed") {
+                if isLoadingSpeed {
+                    HStack {
+                        ProgressView()
+                        Text("Loading…")
+                            .foregroundStyle(.secondary)
+                    }
+                } else if speedSamples.isEmpty {
+                    Text("No speed data for this round.")
+                        .foregroundStyle(.secondary)
+                } else {
+                    speedChart
+                }
+            }
+
             Section("Golf Swings") {
                 statRow(systemImage: "figure.golf", title: "Swings Detected", value: "\(round.swingCount)")
 
@@ -70,9 +93,12 @@ struct GolfRoundDetailView: View {
         .task {
             async let average = store.averageHeartRate(for: round)
             async let samples = store.heartRateSamples(for: round)
+            async let speed = store.speedSamples(for: round)
             averageHeartRate = await average
             heartRateSamples = await samples
             isLoadingHeartRate = false
+            speedSamples = await speed
+            isLoadingSpeed = false
         }
     }
 
@@ -87,6 +113,65 @@ struct GolfRoundDetailView: View {
         }
         .chartYScale(domain: .automatic(includesZero: false))
         .frame(height: 160)
+        .padding(.vertical, 4)
+    }
+
+    /// A speed sample tagged with which contiguous run (between cart pauses) it
+    /// belongs to, so the chart can draw each run as its own unconnected line.
+    private struct SegmentedSpeedSample: Identifiable {
+        let sample: SpeedSample
+        let segment: Int
+        var id: UUID { sample.id }
+    }
+
+    /// Speed samples split into segments by the round's cart intervals: any point
+    /// inside a cart pause is dropped, and each point's segment is the number of
+    /// cart intervals that have already ended before it.
+    private var segmentedSpeedSamples: [SegmentedSpeedSample] {
+        let intervals = round.cartIntervals.sorted { $0.start < $1.start }
+        return speedSamples.compactMap { sample in
+            if intervals.contains(where: { $0.contains(sample.date) }) {
+                return nil
+            }
+            let segment = intervals.filter { $0.end <= sample.date }.count
+            return SegmentedSpeedSample(sample: sample, segment: segment)
+        }
+    }
+
+    private var speedChart: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Chart {
+                // Shade the stretches the round was paused for a cart ride so the
+                // line bridging that gap isn't mistaken for actual movement.
+                ForEach(round.cartIntervals, id: \.self) { interval in
+                    RectangleMark(
+                        xStart: .value("Cart start", interval.start),
+                        xEnd: .value("Cart end", interval.end)
+                    )
+                    .foregroundStyle(.gray.opacity(0.18))
+                }
+
+                // Split the line into a separate series on each side of a cart
+                // gap so it isn't drawn straight across the paused stretch.
+                ForEach(segmentedSpeedSamples) { item in
+                    LineMark(
+                        x: .value("Time", item.sample.date),
+                        y: .value("mph", item.sample.milesPerHour),
+                        series: .value("Segment", item.segment)
+                    )
+                    .foregroundStyle(.green)
+                    .interpolationMethod(.catmullRom)
+                }
+            }
+            .chartYScale(domain: .automatic(includesZero: true))
+            .frame(height: 160)
+
+            if !round.cartIntervals.isEmpty {
+                Label("Shaded time was spent in a cart (paused).", systemImage: "car.fill")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+        }
         .padding(.vertical, 4)
     }
 
@@ -126,6 +211,10 @@ struct GolfRoundDetailView: View {
             start.addingTimeInterval(120),
             start.addingTimeInterval(400),
             start.addingTimeInterval(900)
+        ],
+        cartIntervals: [
+            DateInterval(start: start.addingTimeInterval(1320), end: start.addingTimeInterval(1560)),
+            DateInterval(start: start.addingTimeInterval(2760), end: start.addingTimeInterval(2940))
         ]
     )
 
@@ -135,10 +224,20 @@ struct GolfRoundDetailView: View {
         HeartRateSample(date: start.addingTimeInterval(Double(index) * 360), bpm: bpm)
     }
 
+    // Synthetic walking-speed curve (mph) so the speed chart has something to draw.
+    let speeds: [Double] = [0.0, 2.6, 3.1, 2.9, 0.2, 2.8, 3.0, 2.7, 0.1, 2.5]
+    let speedSamples = speeds.enumerated().map { index, mph in
+        SpeedSample(date: start.addingTimeInterval(Double(index) * 360), milesPerHour: mph)
+    }
+
     return NavigationStack {
         GolfRoundDetailView(
             round: round,
-            store: .preview(rounds: [round], heartRateSamples: [round.id: samples])
+            store: .preview(
+                rounds: [round],
+                heartRateSamples: [round.id: samples],
+                speedSamples: [round.id: speedSamples]
+            )
         )
     }
 }

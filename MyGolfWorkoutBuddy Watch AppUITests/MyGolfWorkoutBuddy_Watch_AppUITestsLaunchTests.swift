@@ -4,6 +4,8 @@
 //
 //  Created by Janene Pappas on 7/6/26.
 //
+//  Launch UI test for the watch app that captures a launch-screen screenshot.
+//
 
 import XCTest
 

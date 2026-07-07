@@ -2,11 +2,10 @@
 //  WorkoutManager.swift
 //  MyGolfWorkoutBuddy Watch App
 //
-//  Runs a single HKWorkoutSession (activity type: golf) for the whole round.
-//  MotionClassifier tells this manager what the golfer is doing right now:
-//  walking and swinging both keep the session running (and both count toward
-//  duration/energy in Health), while a detected cart ride pauses the session
-//  so that time is excluded, then resumes automatically on foot again.
+//  Created by Janene Pappas on 7/6/26.
+//
+//  Drives the golf HKWorkoutSession: publishes live stats, auto-pauses for cart
+//  rides, logs swing events, and saves the workout when the round ends.
 //
 
 import Foundation

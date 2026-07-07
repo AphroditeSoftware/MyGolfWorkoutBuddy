@@ -2,6 +2,11 @@
 //  ContentView.swift
 //  MyGolfWorkoutBuddy
 //
+//  Created by Janene Pappas on 7/6/26.
+//
+//  Root list of recorded golf rounds, with loading, empty, error, and
+//  authorization states, navigating to a detail view per round.
+//
 
 import SwiftUI
 

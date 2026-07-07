@@ -2,9 +2,10 @@
 //  GolfRound.swift
 //  MyGolfWorkoutBuddy
 //
-//  A lightweight, UI-friendly view of an HKWorkout saved by the Watch app.
-//  Swing count/timestamps come from the HKWorkoutEvent markers the Watch app
-//  records each time it detects a golf swing.
+//  Created by Janene Pappas on 7/6/26.
+//
+//  UI-friendly model wrapping an HKWorkout: derives swings and cart intervals
+//  from workout events and formats its stats for display.
 //
 
 import Foundation
@@ -19,6 +20,9 @@ struct GolfRound: Identifiable, Hashable {
     let totalDistance: Double? // meters
     let swingCount: Int
     let swingTimestamps: [Date]
+    /// Stretches the round was paused for a cart ride, derived from the
+    /// workout's pause/resume events. Used to shade cart time in charts.
+    let cartIntervals: [DateInterval]
 
     init(
         id: UUID,
@@ -28,7 +32,8 @@ struct GolfRound: Identifiable, Hashable {
         totalEnergyBurned: Double?,
         totalDistance: Double?,
         swingCount: Int,
-        swingTimestamps: [Date]
+        swingTimestamps: [Date],
+        cartIntervals: [DateInterval] = []
     ) {
         self.id = id
         self.startDate = startDate
@@ -38,6 +43,7 @@ struct GolfRound: Identifiable, Hashable {
         self.totalDistance = totalDistance
         self.swingCount = swingCount
         self.swingTimestamps = swingTimestamps
+        self.cartIntervals = cartIntervals
     }
 
     init(workout: HKWorkout) {
@@ -58,9 +64,33 @@ struct GolfRound: Identifiable, Hashable {
             totalDistance = nil
         }
 
-        let swingEvents = (workout.workoutEvents ?? []).filter { $0.type == .marker }
+        let events = (workout.workoutEvents ?? []).sorted { $0.dateInterval.start < $1.dateInterval.start }
+
+        let swingEvents = events.filter { $0.type == .marker }
         swingTimestamps = swingEvents.map(\.dateInterval.start).sorted()
         swingCount = swingTimestamps.count
+
+        // Pair each pause with the following resume to recover cart intervals;
+        // if the round ended while paused, close the last one at the end date.
+        var intervals: [DateInterval] = []
+        var pauseStart: Date?
+        for event in events {
+            switch event.type {
+            case .pause:
+                pauseStart = event.dateInterval.start
+            case .resume:
+                if let start = pauseStart {
+                    intervals.append(DateInterval(start: start, end: event.dateInterval.start))
+                    pauseStart = nil
+                }
+            default:
+                break
+            }
+        }
+        if let start = pauseStart {
+            intervals.append(DateInterval(start: start, end: workout.endDate))
+        }
+        cartIntervals = intervals
     }
 }
 
@@ -77,9 +107,10 @@ extension GolfRound {
     }
 
     var formattedDuration: String {
-        let total = Int(duration)
-        let hours = total / 3600
-        let minutes = (total % 3600) / 60
+        // Round up to the next whole minute so partial minutes aren't dropped.
+        let totalMinutes = Int((duration / 60).rounded(.up))
+        let hours = totalMinutes / 60
+        let minutes = totalMinutes % 60
         if hours > 0 {
             return String(format: "%dh %02dm", hours, minutes)
         }
@@ -118,21 +149,21 @@ extension GolfRound {
         ),
         GolfRound(
             id: UUID(),
-            startDate: Date(timeIntervalSinceNow: -5 * 86_000),
-            endDate: Date(timeIntervalSinceNow: -5 * 86_000 + 6_300),
+            startDate: Date(timeIntervalSinceNow: -5 * 86_400),
+            endDate: Date(timeIntervalSinceNow: -5 * 86_400 + 6_300),
             duration: 6_300,
             totalEnergyBurned: 275,
             totalDistance: 3_400,
             swingCount: 41,
             swingTimestamps: [
-                Date(timeIntervalSinceNow: -5 * 86_000 + 200),
-                Date(timeIntervalSinceNow: -5 * 86_000 + 2_100)
+                Date(timeIntervalSinceNow: -5 * 86_400 + 200),
+                Date(timeIntervalSinceNow: -5 * 86_400 + 2_100)
             ]
         ),
         GolfRound(
             id: UUID(),
-            startDate: Date(timeIntervalSinceNow: -12 * 86_200),
-            endDate: Date(timeIntervalSinceNow: -12 * 86_200 + 16_200),
+            startDate: Date(timeIntervalSinceNow: -12 * 86_400),
+            endDate: Date(timeIntervalSinceNow: -12 * 86_400 + 16_200),
             duration: 16_200,
             totalEnergyBurned: 703,
             totalDistance: 10_150,

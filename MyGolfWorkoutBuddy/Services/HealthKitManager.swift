@@ -2,8 +2,10 @@
 //  HealthKitManager.swift
 //  MyGolfWorkoutBuddy
 //
-//  Read-only HealthKit access for the iPhone app: it just displays the golf
-//  rounds the Watch app already saved, so it only ever requests read access.
+//  Created by Janene Pappas on 7/6/26.
+//
+//  Read-only HealthKit access for the iPhone app: fetches golf workouts and
+//  each round's heart-rate and walking-speed samples.
 //
 
 import Foundation
@@ -119,6 +121,43 @@ final class HealthKitManager {
                 let unit = HKUnit.count().unitDivided(by: .minute())
                 let results = (samples as? [HKQuantitySample])?.map {
                     HeartRateSample(date: $0.startDate, bpm: $0.quantity.doubleValue(for: unit))
+                } ?? []
+                continuation.resume(returning: results)
+            }
+            healthStore.execute(query)
+        }
+    }
+
+    /// Walking speed over a round (mph), derived from the workout's distance
+    /// samples. Each distance sample is a cumulative value over its own time
+    /// span, so speed is distance divided by that span.
+    func walkingSpeedSamples(for workout: HKWorkout) async throws -> [SpeedSample] {
+        guard let distanceType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning) else {
+            return []
+        }
+
+        return try await withCheckedThrowingContinuation { continuation in
+            let predicate = HKQuery.predicateForObjects(from: workout)
+            let sortByStartDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+            let query = HKSampleQuery(
+                sampleType: distanceType,
+                predicate: predicate,
+                limit: HKObjectQueryNoLimit,
+                sortDescriptors: [sortByStartDate]
+            ) { _, samples, error in
+                if let error {
+                    continuation.resume(throwing: error)
+                    return
+                }
+                let mphPerMetersPerSecond = 2.2369362920544
+                let results: [SpeedSample] = (samples as? [HKQuantitySample])?.compactMap { sample in
+                    let seconds = sample.endDate.timeIntervalSince(sample.startDate)
+                    guard seconds > 0 else { return nil }
+                    let meters = sample.quantity.doubleValue(for: .meter())
+                    let mph = (meters / seconds) * mphPerMetersPerSecond
+                    // Plot at the middle of the sample's span.
+                    let midpoint = sample.startDate.addingTimeInterval(seconds / 2)
+                    return SpeedSample(date: midpoint, milesPerHour: mph)
                 } ?? []
                 continuation.resume(returning: results)
             }

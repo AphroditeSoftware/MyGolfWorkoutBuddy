@@ -2,6 +2,11 @@
 //  GolfRoundsStore.swift
 //  MyGolfWorkoutBuddy
 //
+//  Created by Janene Pappas on 7/6/26.
+//
+//  Observable store that loads golf rounds and vends each round's heart-rate
+//  and walking-speed samples; defines the chart sample models.
+//
 
 import Foundation
 import HealthKit
@@ -11,6 +16,13 @@ struct HeartRateSample: Identifiable, Hashable {
     let id = UUID()
     let date: Date
     let bpm: Double
+}
+
+/// A single walking-speed reading within a round, used to plot the speed chart.
+struct SpeedSample: Identifiable, Hashable {
+    let id = UUID()
+    let date: Date
+    let milesPerHour: Double
 }
 
 @MainActor
@@ -66,18 +78,34 @@ final class GolfRoundsStore {
         #endif
     }
 
+    /// Time-ordered walking-speed samples for a round, used to draw the speed chart.
+    func speedSamples(for round: GolfRound) async -> [SpeedSample] {
+        if let workout = workoutsByID[round.id] {
+            return (try? await healthKitManager.walkingSpeedSamples(for: workout)) ?? []
+        }
+        #if DEBUG
+        return seededSpeedSamples[round.id] ?? []
+        #else
+        return []
+        #endif
+    }
+
     #if DEBUG
     /// Heart rate samples injected for SwiftUI previews, keyed by round id.
     private var seededHeartRateSamples: [UUID: [HeartRateSample]] = [:]
+    /// Walking-speed samples injected for SwiftUI previews, keyed by round id.
+    private var seededSpeedSamples: [UUID: [SpeedSample]] = [:]
 
     /// A store pre-populated with dummy rounds in the `.loaded` state, for SwiftUI previews.
     static func preview(
         rounds: [GolfRound] = GolfRound.sampleRounds,
-        heartRateSamples: [UUID: [HeartRateSample]] = [:]
+        heartRateSamples: [UUID: [HeartRateSample]] = [:],
+        speedSamples: [UUID: [SpeedSample]] = [:]
     ) -> GolfRoundsStore {
         let store = GolfRoundsStore()
         store.rounds = rounds
         store.seededHeartRateSamples = heartRateSamples
+        store.seededSpeedSamples = speedSamples
         store.loadState = .loaded
         return store
     }

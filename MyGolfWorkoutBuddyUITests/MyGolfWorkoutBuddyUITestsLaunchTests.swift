@@ -4,6 +4,8 @@
 //
 //  Created by Janene Pappas on 7/6/26.
 //
+//  Launch UI test for the iPhone app that captures a launch-screen screenshot.
+//
 
 import XCTest
 

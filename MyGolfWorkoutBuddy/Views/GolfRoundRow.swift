@@ -4,7 +4,9 @@
 //
 //  Created by Janene Pappas on 7/6/26.
 //
-
+//  List row summarizing one round: the date plus fixed-width duration, swing,
+//  distance, and calorie stats.
+//
 
 import SwiftUI
 

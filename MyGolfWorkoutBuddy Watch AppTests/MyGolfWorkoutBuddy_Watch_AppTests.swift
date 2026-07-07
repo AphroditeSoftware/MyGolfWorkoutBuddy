@@ -4,6 +4,9 @@
 //
 //  Created by Janene Pappas on 7/6/26.
 //
+//  Swift Testing unit tests for MotionClassifier swing detection, driven by
+//  synthetic motion samples and a recording delegate.
+//
 
 import Testing
 import Foundation
