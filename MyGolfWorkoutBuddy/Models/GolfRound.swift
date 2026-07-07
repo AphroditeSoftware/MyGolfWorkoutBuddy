@@ -67,7 +67,7 @@ struct GolfRound: Identifiable, Hashable {
 extension GolfRound {
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .long
         formatter.timeStyle = .short
         return formatter
     }()

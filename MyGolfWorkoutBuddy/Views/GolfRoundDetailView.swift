@@ -18,7 +18,7 @@ struct GolfRoundDetailView: View {
                 statRow(systemImage: "calendar", title: "Date", value: round.formattedDate)
                 statRow(systemImage: "clock", title: "Duration", value: round.formattedDuration)
                 if let calories = round.formattedCalories {
-                    statRow(systemImage: "flame", title: "Active Energy", value: calories)
+                    statRow(systemImage: "flame", title: "Calories Burned", value: calories, imageColor: .calorieFlame)
                 }
                 if let distance = round.formattedDistance {
                     statRow(systemImage: "figure.walk", title: "Distance", value: distance)
@@ -49,7 +49,7 @@ struct GolfRoundDetailView: View {
                             .foregroundStyle(.secondary)
                     }
                 } else if let averageHeartRate {
-                    statRow(systemImage: "heart.fill", title: "Average", value: String(format: "%.0f BPM", averageHeartRate))
+                    statRow(systemImage: "heart.fill", title: "Average", value: String(format: "%.0f BPM", averageHeartRate), imageColor: .red)
                 } else {
                     Text("No heart rate data for this round.")
                         .foregroundStyle(.secondary)
@@ -64,9 +64,14 @@ struct GolfRoundDetailView: View {
         }
     }
 
-    private func statRow(systemImage: String, title: String, value: String) -> some View {
+    private func statRow(systemImage: String, title: String, value: String, imageColor: Color? = nil) -> some View {
         HStack {
-            Label(title, systemImage: systemImage)
+            Label {
+                Text(title)
+            } icon: {
+                Image(systemName: systemImage)
+                    .foregroundStyle(imageColor ?? Color.accentColor)
+            }
             Spacer()
             Text(value)
                 .foregroundStyle(.secondary)

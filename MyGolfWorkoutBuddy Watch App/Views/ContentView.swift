@@ -31,7 +31,7 @@ struct ContentView: View {
             Image(systemName: "figure.golf")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("My Golf Workout Buddy")
+            Text("Golf Workout Buddy")
                 .font(.headline)
                 .multilineTextAlignment(.center)
             Button("Start Round") {
@@ -49,12 +49,10 @@ struct ContentView: View {
                 .font(.system(.title2, design: .rounded, weight: .semibold))
                 .monospacedDigit()
 
-            stateLabel
-
             HStack {
                 statTile(systemImage: "figure.golf", value: "\(workoutManager.swingCount)", label: "Swings")
-                statTile(systemImage: "flame.fill", value: activeEnergyText, label: "Cal")
-                statTile(systemImage: "heart.fill", value: heartRateText, label: "BPM")
+                statTile(systemImage: "flame.fill", value: activeEnergyText, label: "Cal", imageColor: .calorieFlame)
+                statTile(systemImage: "heart.fill", value: heartRateText, label: "BPM", imageColor: .red)
             }
             .padding(.top, 2)
 
@@ -67,31 +65,11 @@ struct ContentView: View {
         }
     }
 
-    private var stateLabel: some View {
-        let (text, color): (String, Color) = {
-            switch workoutManager.motionState {
-            case .walking:
-                return ("Walking", .green)
-            case .swinging:
-                return ("Swinging", .yellow)
-            case .stationary:
-                return ("Stationary", .gray)
-            case .inCart:
-                return ("In Cart \u{2014} Paused", .orange)
-            case .unknown:
-                return ("Getting Ready…", .gray)
-            }
-        }()
-
-        return Text(text)
-            .font(.caption)
-            .foregroundStyle(color)
-    }
-
-    private func statTile(systemImage: String, value: String, label: String) -> some View {
+    private func statTile(systemImage: String, value: String, label: String, imageColor: Color? = nil) -> some View {
         VStack(spacing: 2) {
             Image(systemName: systemImage)
                 .font(.caption2)
+                .foregroundStyle(imageColor ?? .primary)
             Text(value)
                 .font(.caption)
                 .fontWeight(.semibold)

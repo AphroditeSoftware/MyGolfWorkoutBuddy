@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3C9E4F12FFD556700721917 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9E4F02FFD556700721917 /* Colors.swift */; };
+		C3C9E4F22FFD55B800721917 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9E4F02FFD556700721917 /* Colors.swift */; };
 		C3D949232FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C3D949222FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C3C9E4F02FFD556700721917 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C3D948FF2FFC22520003F3D8 /* MyGolfWorkoutBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGolfWorkoutBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D9490C2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGolfWorkoutBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D949162FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGolfWorkoutBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +156,7 @@
 		C3D948F62FFC22520003F3D8 = {
 			isa = PBXGroup;
 			children = (
+				C3C9E4F02FFD556700721917 /* Colors.swift */,
 				C3D949012FFC22520003F3D8 /* MyGolfWorkoutBuddy */,
 				C3D9490F2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests */,
 				C3D949192FFC22540003F3D8 /* MyGolfWorkoutBuddyUITests */,
@@ -425,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C9E4F12FFD556700721917 /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C9E4F22FFD55B800721917 /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +634,7 @@
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_CFBundleDisplayName = "Golf Workout";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your heart rate and workout data to power live stats during your round.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy saves your golf workouts (walking and swings) to Health, excluding cart rides.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "MyGolfWorkoutBuddy uses motion data to tell walking and golf swings apart from riding in a cart.";
@@ -667,7 +673,7 @@
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_CFBundleDisplayName = "Golf Workout";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your heart rate and workout data to power live stats during your round.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy saves your golf workouts (walking and swings) to Health, excluding cart rides.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "MyGolfWorkoutBuddy uses motion data to tell walking and golf swings apart from riding in a cart.";
@@ -707,7 +713,7 @@
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_CFBundleDisplayName = "Golf Workout";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -750,7 +756,7 @@
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MyGolfWorkoutBuddy;
+				INFOPLIST_KEY_CFBundleDisplayName = "Golf Workout";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

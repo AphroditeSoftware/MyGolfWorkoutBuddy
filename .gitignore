@@ -32,6 +32,9 @@ playground.xcworkspace
 .build/
 .Build/
 
+# Xcode build output
+Build/
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
