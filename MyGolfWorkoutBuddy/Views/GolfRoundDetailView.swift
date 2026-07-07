@@ -4,12 +4,14 @@
 //
 
 import SwiftUI
+import Charts
 
 struct GolfRoundDetailView: View {
     let round: GolfRound
     let store: GolfRoundsStore
 
     @State private var averageHeartRate: Double?
+    @State private var heartRateSamples: [HeartRateSample] = []
     @State private var isLoadingHeartRate = true
 
     var body: some View {
@@ -24,7 +26,27 @@ struct GolfRoundDetailView: View {
                     statRow(systemImage: "figure.walk", title: "Distance", value: distance)
                 }
             }
-
+            
+            Section("Heart Rate") {
+                if isLoadingHeartRate {
+                    HStack {
+                        ProgressView()
+                        Text("Loading…")
+                            .foregroundStyle(.secondary)
+                    }
+                } else if averageHeartRate == nil && heartRateSamples.isEmpty {
+                    Text("No heart rate data for this round.")
+                        .foregroundStyle(.secondary)
+                } else {
+                    if let averageHeartRate {
+                        statRow(systemImage: "heart.fill", title: "Average", value: String(format: "%.0f BPM", averageHeartRate), imageColor: .red)
+                    }
+                    if !heartRateSamples.isEmpty {
+                        heartRateChart
+                    }
+                }
+            }
+            
             Section("Golf Swings") {
                 statRow(systemImage: "figure.golf", title: "Swings Detected", value: "\(round.swingCount)")
 
@@ -41,27 +63,31 @@ struct GolfRoundDetailView: View {
                 }
             }
 
-            Section("Heart Rate") {
-                if isLoadingHeartRate {
-                    HStack {
-                        ProgressView()
-                        Text("Loading…")
-                            .foregroundStyle(.secondary)
-                    }
-                } else if let averageHeartRate {
-                    statRow(systemImage: "heart.fill", title: "Average", value: String(format: "%.0f BPM", averageHeartRate), imageColor: .red)
-                } else {
-                    Text("No heart rate data for this round.")
-                        .foregroundStyle(.secondary)
-                }
-            }
+
         }
         .navigationTitle("Round Detail")
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            averageHeartRate = await store.averageHeartRate(for: round)
+            async let average = store.averageHeartRate(for: round)
+            async let samples = store.heartRateSamples(for: round)
+            averageHeartRate = await average
+            heartRateSamples = await samples
             isLoadingHeartRate = false
         }
+    }
+
+    private var heartRateChart: some View {
+        Chart(heartRateSamples) { sample in
+            LineMark(
+                x: .value("Time", sample.date),
+                y: .value("BPM", sample.bpm)
+            )
+            .foregroundStyle(Color.calorieFlame)
+            .interpolationMethod(.catmullRom)
+        }
+        .chartYScale(domain: .automatic(includesZero: false))
+        .frame(height: 160)
+        .padding(.vertical, 4)
     }
 
     private func statRow(systemImage: String, title: String, value: String, imageColor: Color? = nil) -> some View {
@@ -87,23 +113,32 @@ struct GolfRoundDetailView: View {
 }
 
 #Preview {
-    NavigationStack {
+    let start = Date.now
+    let round = GolfRound(
+        id: UUID(),
+        startDate: start,
+        endDate: start.addingTimeInterval(3600),
+        duration: 3600,
+        totalEnergyBurned: 450,
+        totalDistance: 4800,
+        swingCount: 3,
+        swingTimestamps: [
+            start.addingTimeInterval(120),
+            start.addingTimeInterval(400),
+            start.addingTimeInterval(900)
+        ]
+    )
+
+    // Synthetic heart rate curve so the chart has something to draw.
+    let bpms: [Double] = [92, 104, 118, 131, 126, 140, 135, 122, 110, 98]
+    let samples = bpms.enumerated().map { index, bpm in
+        HeartRateSample(date: start.addingTimeInterval(Double(index) * 360), bpm: bpm)
+    }
+
+    return NavigationStack {
         GolfRoundDetailView(
-            round: GolfRound(
-                id: UUID(),
-                startDate: .now,
-                endDate: .now.addingTimeInterval(3600),
-                duration: 3600,
-                totalEnergyBurned: 450,
-                totalDistance: 4800,
-                swingCount: 3,
-                swingTimestamps: [
-                    Date().addingTimeInterval(120),
-                    Date().addingTimeInterval(400),
-                    Date().addingTimeInterval(900)
-                ]
-            ),
-            store: GolfRoundsStore()
+            round: round,
+            store: .preview(rounds: [round], heartRateSamples: [round.id: samples])
         )
     }
 }

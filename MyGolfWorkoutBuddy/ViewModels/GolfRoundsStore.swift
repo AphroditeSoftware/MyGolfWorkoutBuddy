@@ -6,6 +6,13 @@
 import Foundation
 import HealthKit
 
+/// A single heart rate reading within a round, used to plot the detail chart.
+struct HeartRateSample: Identifiable, Hashable {
+    let id = UUID()
+    let date: Date
+    let bpm: Double
+}
+
 @MainActor
 @Observable
 final class GolfRoundsStore {
@@ -47,11 +54,30 @@ final class GolfRoundsStore {
         return try? await healthKitManager.averageHeartRate(for: workout)
     }
 
+    /// Time-ordered heart rate samples for a round, used to draw the detail chart.
+    func heartRateSamples(for round: GolfRound) async -> [HeartRateSample] {
+        if let workout = workoutsByID[round.id] {
+            return (try? await healthKitManager.heartRateSamples(for: workout)) ?? []
+        }
+        #if DEBUG
+        return seededHeartRateSamples[round.id] ?? []
+        #else
+        return []
+        #endif
+    }
+
     #if DEBUG
+    /// Heart rate samples injected for SwiftUI previews, keyed by round id.
+    private var seededHeartRateSamples: [UUID: [HeartRateSample]] = [:]
+
     /// A store pre-populated with dummy rounds in the `.loaded` state, for SwiftUI previews.
-    static func preview(rounds: [GolfRound] = GolfRound.sampleRounds) -> GolfRoundsStore {
+    static func preview(
+        rounds: [GolfRound] = GolfRound.sampleRounds,
+        heartRateSamples: [UUID: [HeartRateSample]] = [:]
+    ) -> GolfRoundsStore {
         let store = GolfRoundsStore()
         store.rounds = rounds
+        store.seededHeartRateSamples = heartRateSamples
         store.loadState = .loaded
         return store
     }

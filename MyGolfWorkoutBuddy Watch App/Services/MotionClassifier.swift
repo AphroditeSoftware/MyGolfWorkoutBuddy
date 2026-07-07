@@ -46,14 +46,36 @@ final class MotionClassifier {
     private(set) var currentState: MotionState = .unknown
 
     // MARK: - Swing detection tuning
-    /// Peak rotation rate (rad/s) a real golf swing reliably clears; a slow practice
-    /// waggle or normal arm movement stays well under this.
-    private let swingRotationThreshold = 6.0
+    /// A golf swing shows up as a brief, violent burst that pairs high rotation
+    /// with high linear acceleration. Everyday gestures (reaching for a water
+    /// bottle, waggling the club, adjusting a glove) trip one of these signals
+    /// but rarely all of them at once, so we require them together before
+    /// counting a swing. All thresholds are conservative starting points and are
+    /// expected to be tuned against real on-course data.
+    ///
+    /// Rotation rate (rad/s) that opens a candidate swing "burst".
+    private let swingRotationEnterThreshold = 8.0
+    /// Rotation rate (rad/s) the burst must fall back below to close it. The gap
+    /// between enter/exit is hysteresis so a single swing isn't split in two.
+    private let swingRotationExitThreshold = 3.0
+    /// Peak linear acceleration (g) the burst must also reach. Lifting a light
+    /// object rotates the wrist but generates little acceleration, so this gate
+    /// rejects it.
+    private let swingAccelerationThreshold = 2.2
+    /// A real swing's high-energy phase is brief; a burst that stays elevated
+    /// longer than this is some other motion (carrying the bag, scrubbing a
+    /// club) and is discarded.
+    private let maxSwingBurstDuration: TimeInterval = 0.6
     /// Minimum time between two counted swings, so one swing isn't double-counted.
     private let swingRefractoryInterval: TimeInterval = 1.5
     private var lastSwingDate: Date?
     /// How long the UI shows "Swinging" before falling back to "Walking".
     private let swingDisplayDuration: TimeInterval = 1.2
+
+    // Tracks an in-progress candidate swing burst.
+    private var swingBurstStart: Date?
+    private var peakBurstRotation = 0.0
+    private var peakBurstAcceleration = 0.0
 
     // MARK: - Cart detection tuning
     /// Consecutive automotive samples required before we trust it's a cart, not a bump.
@@ -68,6 +90,7 @@ final class MotionClassifier {
         consecutiveAutomotiveSamples = 0
         consecutiveNonAutomotiveSamples = 0
         lastSwingDate = nil
+        resetSwingBurst()
         startActivityUpdatesIfAvailable()
         startDeviceMotionUpdatesIfAvailable()
     }
@@ -121,20 +144,61 @@ final class MotionClassifier {
     }
 
     private func evaluateSwing(using motion: CMDeviceMotion) {
+        let rotation = motion.rotationRate
+        let rotationMagnitude = (rotation.x * rotation.x + rotation.y * rotation.y + rotation.z * rotation.z).squareRoot()
+        let accel = motion.userAcceleration
+        let accelerationMagnitude = (accel.x * accel.x + accel.y * accel.y + accel.z * accel.z).squareRoot()
+
+        processSwingSample(rotationMagnitude: rotationMagnitude, accelerationMagnitude: accelerationMagnitude, at: Date())
+    }
+
+    /// Core swing-burst logic, kept free of CoreMotion so it can be unit tested
+    /// by feeding raw magnitudes and timestamps directly.
+    func processSwingSample(rotationMagnitude: Double, accelerationMagnitude: Double, at now: Date) {
         // Never mistake cart vibration/road bumps for a swing.
         guard currentState != .inCart else { return }
 
-        let rotation = motion.rotationRate
-        let magnitude = (rotation.x * rotation.x + rotation.y * rotation.y + rotation.z * rotation.z).squareRoot()
-        guard magnitude > swingRotationThreshold else { return }
-
-        let now = Date()
-        if let last = lastSwingDate, now.timeIntervalSince(last) < swingRefractoryInterval {
+        guard let burstStart = swingBurstStart else {
+            // Not tracking a burst yet: a sharp rotational spike opens one.
+            if rotationMagnitude >= swingRotationEnterThreshold {
+                swingBurstStart = now
+                peakBurstRotation = rotationMagnitude
+                peakBurstAcceleration = accelerationMagnitude
+            }
             return
         }
-        lastSwingDate = now
 
-        delegate?.motionClassifier(self, didDetectSwingAt: now)
+        // A burst is underway: keep the running peaks of both signals.
+        peakBurstRotation = max(peakBurstRotation, rotationMagnitude)
+        peakBurstAcceleration = max(peakBurstAcceleration, accelerationMagnitude)
+
+        let burstDuration = now.timeIntervalSince(burstStart)
+
+        if rotationMagnitude < swingRotationExitThreshold {
+            // Burst finished — count it only if it was a brief spike that paired
+            // high rotation with high linear acceleration. A water-bottle lift
+            // reaches neither the acceleration threshold nor stays this brief.
+            let wasBrief = burstDuration <= maxSwingBurstDuration
+            let hadEnoughAcceleration = peakBurstAcceleration >= swingAccelerationThreshold
+            if wasBrief && hadEnoughAcceleration {
+                registerSwing(at: now)
+            }
+            resetSwingBurst()
+        } else if burstDuration > maxSwingBurstDuration {
+            // Rotation stayed elevated too long to be a swing (a sustained arm
+            // movement rather than a sharp strike); abandon this burst.
+            resetSwingBurst()
+        }
+    }
+
+    private func registerSwing(at date: Date) {
+        // Enforce the refractory window so one swing isn't double-counted.
+        if let last = lastSwingDate, date.timeIntervalSince(last) < swingRefractoryInterval {
+            return
+        }
+        lastSwingDate = date
+
+        delegate?.motionClassifier(self, didDetectSwingAt: date)
         updateState(.swinging)
 
         // Revert the displayed state after a beat, without blocking the motion
@@ -149,6 +213,12 @@ final class MotionClassifier {
         }
     }
 
+    private func resetSwingBurst() {
+        swingBurstStart = nil
+        peakBurstRotation = 0
+        peakBurstAcceleration = 0
+    }
+
     // MARK: - State updates
 
     private func updateState(_ newState: MotionState) {
@@ -157,3 +227,13 @@ final class MotionClassifier {
         delegate?.motionClassifier(self, didUpdateState: newState)
     }
 }
+
+#if DEBUG
+extension MotionClassifier {
+    /// Testing seam: force the current activity state (e.g. `.inCart`) so swing
+    /// suppression can be exercised without a live `CMMotionActivity`.
+    func setStateForTesting(_ state: MotionState) {
+        currentState = state
+    }
+}
+#endif

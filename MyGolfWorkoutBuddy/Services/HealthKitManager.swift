@@ -96,4 +96,33 @@ final class HealthKitManager {
             healthStore.execute(query)
         }
     }
+
+    /// Time-ordered heart rate samples across a specific round, for charting.
+    func heartRateSamples(for workout: HKWorkout) async throws -> [HeartRateSample] {
+        guard let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate) else {
+            return []
+        }
+
+        return try await withCheckedThrowingContinuation { continuation in
+            let predicate = HKQuery.predicateForObjects(from: workout)
+            let sortByStartDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+            let query = HKSampleQuery(
+                sampleType: heartRateType,
+                predicate: predicate,
+                limit: HKObjectQueryNoLimit,
+                sortDescriptors: [sortByStartDate]
+            ) { _, samples, error in
+                if let error {
+                    continuation.resume(throwing: error)
+                    return
+                }
+                let unit = HKUnit.count().unitDivided(by: .minute())
+                let results = (samples as? [HKQuantitySample])?.map {
+                    HeartRateSample(date: $0.startDate, bpm: $0.quantity.doubleValue(for: unit))
+                } ?? []
+                continuation.resume(returning: results)
+            }
+            healthStore.execute(query)
+        }
+    }
 }
