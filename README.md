@@ -11,7 +11,7 @@ The Watch app starts one `HKWorkoutSession` (activity type `.golf`, location `.o
 
 Both walking and swinging happen while the session is running, so both count toward the saved workout's duration and active energy; only cart time is paused out.
 
-The iPhone app doesn't talk to the Watch app directly — it reads whatever golf workouts have landed in HealthKit and presents them as a list, with a detail screen per round.
+The iPhone app doesn't talk to the Watch app directly — it reads whatever golf workouts have landed in HealthKit and presents them as a list, with a detail screen per round (summary stats plus Swift Charts heart-rate and walking-speed graphs). Because cart time is paused out of the workout, the speed chart breaks the line across those gaps and shades them, using the workout's pause/resume events.
 
 ## Project structure
 
@@ -19,19 +19,21 @@ The iPhone app doesn't talk to the Watch app directly — it reads whatever golf
 MyGolfWorkoutBuddy/                       # iPhone companion app
 ├── Models/
 │   └── GolfRound.swift                   # UI-friendly wrapper around an HKWorkout (date, duration,
-│                                          # calories, distance, swing count/timestamps); has #if DEBUG
-│                                          # sample data for previews
+│                                          # calories, distance, swing count/timestamps, cart intervals);
+│                                          # has #if DEBUG sample data for previews
 ├── Services/
 │   └── HealthKitManager.swift            # Read-only HealthKit access: authorization, fetch golf
-│                                          # workouts, per-round average heart rate + heart rate samples
+│                                          # workouts, per-round average heart rate, heart rate samples,
+│                                          # and derived walking-speed samples
 ├── ViewModels/
 │   └── GolfRoundsStore.swift             # @Observable store: loads rounds, exposes load state,
-│                                          # caches HKWorkout objects for detail lookups; HeartRateSample model
+│                                          # caches HKWorkout objects for detail lookups; HeartRateSample/SpeedSample models
 ├── Views/
 │   ├── ContentView.swift                 # NavigationStack + list of rounds (loading/empty/denied/error states)
 │   ├── GolfRoundRow.swift                # Row: date, duration, swing count, distance, calories
 │   └── GolfRoundDetailView.swift         # Full stats + per-swing timestamps + average heart rate +
-│                                          # a Swift Charts heart rate graph
+│                                          # Swift Charts heart rate and walking-speed graphs (the speed
+│                                          # chart breaks the line and shades cart-paused stretches)
 ├── MyGolfWorkoutBuddyApp.swift
 └── MyGolfWorkoutBuddy.entitlements       # HealthKit (read)
 
@@ -50,9 +52,10 @@ MyGolfWorkoutBuddy Watch App/             # watchOS app that records rounds
 ├── MyGolfWorkoutBuddyApp.swift
 └── MyGolfWorkoutBuddy Watch App.entitlements  # HealthKit (read/write) + background delivery
 
+MyGolfWorkoutBuddyTests/                  # Swift Testing unit tests for GolfRound stat formatting
 MyGolfWorkoutBuddy Watch AppTests/        # Swift Testing unit tests for MotionClassifier swing detection
-MyGolfWorkoutBuddyTests/, MyGolfWorkoutBuddyUITests/,
-MyGolfWorkoutBuddy Watch AppUITests/      # remaining stock Xcode test targets (unwritten)
+MyGolfWorkoutBuddyUITests/,
+MyGolfWorkoutBuddy Watch AppUITests/      # remaining stock Xcode UI test targets (unwritten)
 ```
 
 ## Requirements
@@ -82,6 +85,20 @@ The first "Start Round" tap on the Watch and first launch of the iPhone app will
 4. Tap **Start Round**, walk around/swing to see swing count and live state update, and confirm the state switches to "In Cart — Paused" when riding a cart. Tap **End Round** to save.
 5. Build and run the iPhone app scheme; the round should appear in the list once HealthKit finishes syncing it, with a detail view for full stats.
 
+## Running the tests
+
+The unit tests are pure logic and *do* run in the Simulator (unlike the live HealthKit/CoreMotion features, which need a device). They must run on an **iOS 26.5 simulator — e.g. iPhone 17** — because that matches the deployment target; older simulators and the paired physical devices are ineligible and the run will report "no result".
+
+- iPhone: `MyGolfWorkoutBuddy` scheme → `MyGolfWorkoutBuddyTests` — `GolfRound` stat formatting.
+- Watch: `MyGolfWorkoutBuddy Watch App` scheme → `MyGolfWorkoutBuddy Watch AppTests` — `MotionClassifier` swing detection.
+
+From the command line, for example:
+
+```
+xcodebuild test -project MyGolfWorkoutBuddy.xcodeproj -scheme MyGolfWorkoutBuddy \
+  -destination 'platform=iOS Simulator,name=iPhone 17' -only-testing:MyGolfWorkoutBuddyTests
+```
+
 ## Tuning notes
 
 `MotionClassifier` uses a few hand-picked constants that will likely need adjusting against real swing/cart data:
@@ -97,6 +114,6 @@ The burst logic is factored into a CoreMotion-free `processSwingSample(rotationM
 
 ## Known gaps
 
-- Unit tests cover `MotionClassifier` swing detection (`MyGolfWorkoutBuddy Watch AppTests`); the other three test targets are still unmodified Xcode template stubs, and there are no UI tests yet.
+- Unit tests cover `MotionClassifier` swing detection (`MyGolfWorkoutBuddy Watch AppTests`) and `GolfRound` stat formatting (`MyGolfWorkoutBuddyTests`); the two UI test targets are still unmodified Xcode template stubs.
 - Swing detection is a hand-tuned heuristic (gated on rotation, acceleration, and burst duration), not a trained classifier; the thresholds are conservative starting points, so mis-fires and missed swings are possible and worth field-testing against real rounds.
 - The iPhone app has no way to trigger a HealthKit sync manually beyond pull-to-refresh; if a round doesn't appear, refresh or check Health app permissions first.
