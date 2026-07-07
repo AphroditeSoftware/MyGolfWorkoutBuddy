@@ -197,6 +197,7 @@ struct GolfRoundDetailView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     let start = Date.now
     let round = GolfRound(
@@ -241,3 +242,4 @@ struct GolfRoundDetailView: View {
         )
     }
 }
+#endif

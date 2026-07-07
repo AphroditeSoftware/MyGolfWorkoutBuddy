@@ -80,6 +80,8 @@ struct ContentView: View {
 
 
 
+#if DEBUG
 #Preview {
     ContentView(store: .preview())
 }
+#endif

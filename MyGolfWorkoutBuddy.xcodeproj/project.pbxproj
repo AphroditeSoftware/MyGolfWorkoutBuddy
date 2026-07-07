@@ -74,9 +74,22 @@
 		C3D9493B2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyGolfWorkoutBuddy Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C329304D2FFD70B2005B4581 /* Exceptions for "MyGolfWorkoutBuddy" folder in "MyGolfWorkoutBuddy" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C3D949012FFC22520003F3D8 /* MyGolfWorkoutBuddy */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C329304D2FFD70B2005B4581 /* Exceptions for "MyGolfWorkoutBuddy" folder in "MyGolfWorkoutBuddy" target */,
+			);
 			path = MyGolfWorkoutBuddy;
 			sourceTree = "<group>";
 		};
@@ -713,9 +726,11 @@
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyGolfWorkoutBuddy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Golf Workout";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -756,9 +771,11 @@
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyGolfWorkoutBuddy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Golf Workout";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
