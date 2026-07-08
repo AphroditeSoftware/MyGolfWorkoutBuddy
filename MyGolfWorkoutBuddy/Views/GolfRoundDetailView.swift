@@ -34,10 +34,17 @@ struct GolfRoundDetailView: View {
                     statRow(systemImage: "flame", title: "Calories Burned", value: calories, imageColor: .calorieFlame)
                 }
                 if let distance = round.formattedDistance {
-                    statRow(systemImage: "figure.walk", title: "Distance", value: distance)
+                    statRow(systemImage: "figure.walk", title: "Total Distance Walked", value: distance)
                 }
             }
             
+            Section("Golf Swings") {
+                statRow(systemImage: "figure.golf", title: "All Swings Detected", value: "\(round.swingCount)")
+
+                statRow(systemImage: "figure.golf", title: "Actual Swings Detected", value: "\(round.actualSwingCount)")
+
+            }
+
             Section("Heart Rate") {
                 if isLoadingHeartRate {
                     HStack {
@@ -58,7 +65,7 @@ struct GolfRoundDetailView: View {
                 }
             }
 
-            Section("Speed") {
+            Section("Walking Speed") {
                 if isLoadingSpeed {
                     HStack {
                         ProgressView()
@@ -70,22 +77,6 @@ struct GolfRoundDetailView: View {
                         .foregroundStyle(.secondary)
                 } else {
                     speedChart
-                }
-            }
-
-            Section("Golf Swings") {
-                statRow(systemImage: "figure.golf", title: "Swings Detected", value: "\(round.swingCount)")
-
-                if !round.swingTimestamps.isEmpty {
-                    ForEach(Array(round.swingTimestamps.enumerated()), id: \.offset) { index, timestamp in
-                        HStack {
-                            Text("Swing \(index + 1)")
-                            Spacer()
-                            Text(relativeOffset(for: timestamp))
-                                .foregroundStyle(.secondary)
-                        }
-                        .font(.subheadline)
-                    }
                 }
             }
 
@@ -366,6 +357,7 @@ private struct ChartZoomView<Content: View>: View {
         totalEnergyBurned: 450,
         totalDistance: 4800,
         swingCount: 3,
+        actualSwingCount: 2,
         swingTimestamps: [
             start.addingTimeInterval(120),
             start.addingTimeInterval(400),

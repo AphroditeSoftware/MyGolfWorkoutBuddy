@@ -19,6 +19,7 @@ struct GolfRound: Identifiable, Hashable {
     let totalEnergyBurned: Double? // kilocalories
     let totalDistance: Double? // meters
     let swingCount: Int
+    let actualSwingCount: Int
     let swingTimestamps: [Date]
     /// Stretches the round was paused for a cart ride, derived from the
     /// workout's pause/resume events. Used to shade cart time in charts.
@@ -32,6 +33,7 @@ struct GolfRound: Identifiable, Hashable {
         totalEnergyBurned: Double?,
         totalDistance: Double?,
         swingCount: Int,
+        actualSwingCount: Int,
         swingTimestamps: [Date],
         cartIntervals: [DateInterval] = []
     ) {
@@ -42,6 +44,7 @@ struct GolfRound: Identifiable, Hashable {
         self.totalEnergyBurned = totalEnergyBurned
         self.totalDistance = totalDistance
         self.swingCount = swingCount
+        self.actualSwingCount = actualSwingCount
         self.swingTimestamps = swingTimestamps
         self.cartIntervals = cartIntervals
     }
@@ -69,7 +72,22 @@ struct GolfRound: Identifiable, Hashable {
         let swingEvents = events.filter { $0.type == .marker }
         swingTimestamps = swingEvents.map(\.dateInterval.start).sorted()
         swingCount = swingTimestamps.count
+        
+        var filteredTimestamps: [Date] = []
 
+        for currentTimestamp in swingTimestamps {
+            if let lastAccepted = filteredTimestamps.last {
+                // timeIntervalSince returns differences in seconds
+                if currentTimestamp.timeIntervalSince(lastAccepted) >= 5.0 {
+                    filteredTimestamps.append(currentTimestamp)
+                }
+            } else {
+                // Always keep the very first timestamp
+                filteredTimestamps.append(currentTimestamp)
+            }
+        }
+        actualSwingCount = filteredTimestamps.count
+        
         // Pair each pause with the following resume to recover cart intervals;
         // if the round ended while paused, close the last one at the end date.
         var intervals: [DateInterval] = []
@@ -141,6 +159,7 @@ extension GolfRound {
             totalEnergyBurned: 612,
             totalDistance: 9_012,
             swingCount: 78,
+            actualSwingCount: 32,
             swingTimestamps: [
                 Date(timeIntervalSinceNow: -86_400 + 300),
                 Date(timeIntervalSinceNow: -86_400 + 1_450),
@@ -155,6 +174,7 @@ extension GolfRound {
             totalEnergyBurned: 275,
             totalDistance: 3_400,
             swingCount: 41,
+            actualSwingCount: 20,
             swingTimestamps: [
                 Date(timeIntervalSinceNow: -5 * 86_400 + 200),
                 Date(timeIntervalSinceNow: -5 * 86_400 + 2_100)
@@ -168,6 +188,7 @@ extension GolfRound {
             totalEnergyBurned: 703,
             totalDistance: 10_150,
             swingCount: 92,
+            actualSwingCount: 42,
             swingTimestamps: []
         )
     ]

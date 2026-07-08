@@ -14,17 +14,18 @@
 "Date" = "Date";
 "Duration" = "Duration";
 "Calories Burned" = "Calories Burned";
-"Distance" = "Distance";
+"Total Distance Walked" = "Total Distance Walked";
 "Heart Rate" = "Heart Rate";
 "Loading…" = "Loading…";
 "No heart rate data for this round." = "No heart rate data for this round.";
 "Average" = "Average";
 /* Average heart rate value, e.g. "142 BPM" */
 "%.0f BPM" = "%.0f BPM";
-"Speed" = "Speed";
+"Walking Speed" = "Walking Speed";
 "No speed data for this round." = "No speed data for this round.";
 "Golf Swings" = "Golf Swings";
 "Swings Detected" = "Swings Detected";
+"Actual Swings Detected" = "Actual Swings Detected";
 /* One detected swing, numbered, e.g. "Swing 3" */
 "Swing %lld" = "Swing %lld";
 /* Time offset of a swing into the round, e.g. "12:04 into round" */
