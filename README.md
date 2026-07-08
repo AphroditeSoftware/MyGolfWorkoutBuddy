@@ -13,6 +13,8 @@ Both walking and swinging happen while the session is running, so both count tow
 
 The iPhone app doesn't talk to the Watch app directly — it reads whatever golf workouts have landed in HealthKit and presents them as a list, with a detail screen per round (summary stats plus Swift Charts heart-rate and walking-speed graphs). It opens on a brief branded splash screen that fades into the list while HealthKit loads. Because cart time is paused out of the workout, the speed chart breaks the line across those gaps and shades them, using the workout's pause/resume events. Tapping either chart opens it full screen in landscape (forced, so it works even with the device's Rotation Lock on), where it can be pinch-zoomed and panned; the back chevron rotates back to portrait and returns. The rest of the app stays portrait.
 
+Includes localization with Engish and Spanish
+
 ## Project structure
 
 ```
@@ -59,6 +61,12 @@ MyGolfWorkoutBuddyTests/                  # Swift Testing unit tests for GolfRou
 MyGolfWorkoutBuddy Watch AppTests/        # Swift Testing unit tests for MotionClassifier swing detection
 MyGolfWorkoutBuddyUITests/,
 MyGolfWorkoutBuddy Watch AppUITests/      # remaining stock Xcode UI test targets (unwritten)
+MyGolfWorkoutBuddy Watch Widget/          # watchOS widget that launches the watchOS app
+├── AppIntent.swift
+├── MyGolfWorkoutBuddy_Watch_Widget.swift
+├── MyGolfWorkoutBuddy_Watch_WidgetBundle.swift
+└── MyGolfWorkoutBuddy_Watch_WidgetControl.swift
+
 ```
 
 ## Requirements
@@ -85,8 +93,9 @@ The first "Start Round" tap on the Watch and first launch of the iPhone app will
 1. Open `MyGolfWorkoutBuddy.xcodeproj` in Xcode.
 2. Select your team under each target's Signing & Capabilities tab if Automatic signing doesn't already resolve one.
 3. Build and run the Watch App scheme on a paired Watch+iPhone.
-4. Tap **Start Round**, walk around/swing to see swing count and live state update, and confirm the state switches to "In Cart — Paused" when riding a cart. Tap **End Round** to save.
-5. Build and run the iPhone app scheme; the round should appear in the list once HealthKit finishes syncing it, with a detail view for full stats.
+4. Tap the Widget to launch the app
+5. Tap **Start Round**, walk around/swing to see swing count and live state update, and confirm the state switches to "In Cart — Paused" when riding a cart. Tap **End Round** to save.
+6. Build and run the iPhone app scheme; the round should appear in the list once HealthKit finishes syncing it, with a detail view for full stats.
 
 ## Running the tests
 
