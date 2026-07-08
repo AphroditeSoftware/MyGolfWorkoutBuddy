@@ -20,8 +20,10 @@
 "No heart rate data for this round." = "No hay datos de frecuencia cardíaca para esta ronda.";
 "Average" = "Promedio";
 "%.0f BPM" = "%.0f LPM";
+"Heart rate over time chart" = "Gráfico de la frecuencia cardíaca a lo largo del tiempo";
 "Walking Speed" = "Velocidad al caminar";
 "No speed data for this round." = "No hay datos de velocidad para esta ronda.";
+"Walking speed over time chart" = "Gráfico de la velocidad al caminar a lo largo del tiempo";
 "Golf Swings" = "Swings de golf";
 "Swings Detected" = "Swings detectados";
 "Actual Swings Detected" = "Swings reales detectados";

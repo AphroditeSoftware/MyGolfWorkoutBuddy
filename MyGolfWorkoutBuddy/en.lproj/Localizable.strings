@@ -21,8 +21,10 @@
 "Average" = "Average";
 /* Average heart rate value, e.g. "142 BPM" */
 "%.0f BPM" = "%.0f BPM";
+"Heart rate over time chart" = "Heart rate over time chart";
 "Walking Speed" = "Walking Speed";
 "No speed data for this round." = "No speed data for this round.";
+"Walking speed over time chart" = "Walking speed over time chart";
 "Golf Swings" = "Golf Swings";
 "Swings Detected" = "Swings Detected";
 "Actual Swings Detected" = "Actual Swings Detected";

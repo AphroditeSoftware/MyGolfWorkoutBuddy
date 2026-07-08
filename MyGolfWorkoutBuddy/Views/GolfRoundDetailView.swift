@@ -61,6 +61,7 @@ struct GolfRoundDetailView: View {
                     }
                     if !heartRateSamples.isEmpty {
                         heartRateChart
+                        .accessibilityLabel("Heart rate over time chart")
                     }
                 }
             }
@@ -77,6 +78,7 @@ struct GolfRoundDetailView: View {
                         .foregroundStyle(.secondary)
                 } else {
                     speedChart
+                    .accessibilityLabel("Walking speed over time chart")
                 }
             }
 
