@@ -119,13 +119,13 @@ extension GolfRound {
 
     var formattedCalories: String? {
         guard let totalEnergyBurned else { return nil }
-        return String(format: "%.0f Cal", totalEnergyBurned)
+        return String(format: NSLocalizedString("%.0f Cal", comment: "Calories burned during a round"), totalEnergyBurned)
     }
 
     var formattedDistance: String? {
         guard let totalDistance else { return nil }
         let miles = totalDistance / 1609.344
-        return String(format: "%.1f mi", miles)
+        return String(format: NSLocalizedString("%.1f mi", comment: "Distance walked in miles"), miles)
     }
 }
 

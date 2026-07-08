@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C32930682FFED9F7005B4581 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32930672FFED9F7005B4581 /* WidgetKit.framework */; };
+		C329306A2FFED9F7005B4581 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32930692FFED9F7005B4581 /* SwiftUI.framework */; };
+		C32930792FFED9F8005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C32930652FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C3C9E4F12FFD556700721917 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9E4F02FFD556700721917 /* Colors.swift */; };
 		C3C9E4F22FFD55B800721917 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9E4F02FFD556700721917 /* Colors.swift */; };
 		C3D949232FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C3D949222FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C32930772FFED9F8005B4581 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D948F72FFC22520003F3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C32930642FFED9F7005B4581;
+			remoteInfo = "MyGolfWorkoutBuddy Watch WidgetExtension";
+		};
 		C3D9490D2FFC22540003F3D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C3D948F72FFC22520003F3D8 /* Project object */;
@@ -51,6 +61,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C329307E2FFED9F8005B4581 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C32930792FFED9F8005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3D949482FFC22540003F3D8 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +86,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C32930652FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MyGolfWorkoutBuddy Watch WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32930672FFED9F7005B4581 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		C32930692FFED9F7005B4581 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		C3C9E4F02FFD556700721917 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C3D948FF2FFC22520003F3D8 /* MyGolfWorkoutBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGolfWorkoutBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D9490C2FFC22540003F3D8 /* MyGolfWorkoutBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGolfWorkoutBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,9 +106,24 @@
 			);
 			target = C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */;
 		};
+		C329307D2FFED9F8005B4581 /* Exceptions for "MyGolfWorkoutBuddy Watch Widget" folder in "MyGolfWorkoutBuddy Watch WidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C32930642FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C329306B2FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch Widget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C329307D2FFED9F8005B4581 /* Exceptions for "MyGolfWorkoutBuddy Watch Widget" folder in "MyGolfWorkoutBuddy Watch WidgetExtension" target */,
+			);
+			path = "MyGolfWorkoutBuddy Watch Widget";
+			sourceTree = "<group>";
+		};
 		C3D949012FFC22520003F3D8 /* MyGolfWorkoutBuddy */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -121,6 +160,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C32930622FFED9F7005B4581 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C329306A2FFED9F7005B4581 /* SwiftUI.framework in Frameworks */,
+				C32930682FFED9F7005B4581 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3D948FC2FFC22520003F3D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +214,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C32930662FFED9F7005B4581 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C32930672FFED9F7005B4581 /* WidgetKit.framework */,
+				C32930692FFED9F7005B4581 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C3D948F62FFC22520003F3D8 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +233,8 @@
 				C3D949262FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */,
 				C3D949342FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests */,
 				C3D9493E2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests */,
+				C329306B2FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch Widget */,
+				C32930662FFED9F7005B4581 /* Frameworks */,
 				C3D949002FFC22520003F3D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -189,6 +248,7 @@
 				C3D949222FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App.app */,
 				C3D949312FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests.xctest */,
 				C3D9493B2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests.xctest */,
+				C32930652FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +256,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C32930642FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C329307A2FFED9F8005B4581 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch WidgetExtension" */;
+			buildPhases = (
+				C32930612FFED9F7005B4581 /* Sources */,
+				C32930622FFED9F7005B4581 /* Frameworks */,
+				C32930632FFED9F7005B4581 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C329306B2FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch Widget */,
+			);
+			name = "MyGolfWorkoutBuddy Watch WidgetExtension";
+			packageProductDependencies = (
+			);
+			productName = "MyGolfWorkoutBuddy Watch WidgetExtension";
+			productReference = C32930652FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3D949492FFC22540003F3D8 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy" */;
@@ -273,10 +355,12 @@
 				C3D9491E2FFC22540003F3D8 /* Sources */,
 				C3D9491F2FFC22540003F3D8 /* Frameworks */,
 				C3D949202FFC22540003F3D8 /* Resources */,
+				C329307E2FFED9F8005B4581 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C32930782FFED9F8005B4581 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				C3D949262FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */,
@@ -341,9 +425,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2650;
+				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
+					C32930642FFED9F7005B4581 = {
+						CreatedOnToolsVersion = 26.6;
+					};
 					C3D948FE2FFC22520003F3D8 = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -374,6 +461,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = C3D948F62FFC22520003F3D8;
 			minimizedProjectReferenceProxies = 1;
@@ -388,11 +476,19 @@
 				C3D949212FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch App */,
 				C3D949302FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppTests */,
 				C3D9493A2FFC22540003F3D8 /* MyGolfWorkoutBuddy Watch AppUITests */,
+				C32930642FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C32930632FFED9F7005B4581 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3D948FD2FFC22520003F3D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +534,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C32930612FFED9F7005B4581 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3D948FB2FFC22520003F3D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +588,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C32930782FFED9F8005B4581 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C32930642FFED9F7005B4581 /* MyGolfWorkoutBuddy Watch WidgetExtension */;
+			targetProxy = C32930772FFED9F8005B4581 /* PBXContainerItemProxy */;
+		};
 		C3D9490E2FFC22540003F3D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C3D948FE2FFC22520003F3D8 /* MyGolfWorkoutBuddy */;
@@ -513,6 +621,75 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C329307B2FFED9F8005B4581 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MyGolfWorkoutBuddy Watch Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MyGolfWorkoutBuddy Watch Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aphroditesoftwareinc.mygolfworkoutbuddy.watchkitapp.MyGolfWorkoutBuddy-Watch-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		C329307C2FFED9F8005B4581 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JPVB928KRJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MyGolfWorkoutBuddy Watch Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MyGolfWorkoutBuddy Watch Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aphroditesoftwareinc.mygolfworkoutbuddy.watchkitapp.MyGolfWorkoutBuddy-Watch-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
 		C3D949432FFC22540003F3D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1008,6 +1185,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C329307A2FFED9F8005B4581 /* Build configuration list for PBXNativeTarget "MyGolfWorkoutBuddy Watch WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C329307B2FFED9F8005B4581 /* Debug */,
+				C329307C2FFED9F8005B4581 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C3D948FA2FFC22520003F3D8 /* Build configuration list for PBXProject "MyGolfWorkoutBuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

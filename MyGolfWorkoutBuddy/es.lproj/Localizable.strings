@@ -1,0 +1,40 @@
+/* MyGolfWorkoutBuddy — Spanish (es) strings */
+
+/* MARK: - ContentView (rounds list) */
+"My Golf Rounds" = "Mis rondas de golf";
+"Loading rounds…" = "Cargando rondas…";
+"Health Access Needed" = "Se necesita acceso a Salud";
+"Allow MyGolfWorkoutBuddy to read your workouts in the Health app to see your rounds here." = "Permite que MyGolfWorkoutBuddy lea tus entrenamientos en la app Salud para ver tus rondas aquí.";
+"Couldn't Load Rounds" = "No se pudieron cargar las rondas";
+"No Rounds Yet" = "Aún no hay rondas";
+"Rounds you record on your Apple Watch will show up here." = "Las rondas que registres en tu Apple Watch aparecerán aquí.";
+
+/* MARK: - GolfRoundDetailView */
+"Round Detail" = "Detalle de la ronda";
+"Date" = "Fecha";
+"Duration" = "Duración";
+"Calories Burned" = "Calorías quemadas";
+"Distance" = "Distancia";
+"Heart Rate" = "Frecuencia cardíaca";
+"Loading…" = "Cargando…";
+"No heart rate data for this round." = "No hay datos de frecuencia cardíaca para esta ronda.";
+"Average" = "Promedio";
+"%.0f BPM" = "%.0f LPM";
+"Speed" = "Velocidad";
+"No speed data for this round." = "No hay datos de velocidad para esta ronda.";
+"Golf Swings" = "Swings de golf";
+"Swings Detected" = "Swings detectados";
+"Swing %lld" = "Swing %lld";
+"%d:%02d into round" = "%d:%02d en la ronda";
+"Shaded time was spent in a cart (paused)." = "El tiempo sombreado se pasó en un carrito (en pausa).";
+"Pinch to zoom · double-tap to reset" = "Pellizca para ampliar · toca dos veces para restablecer";
+"Back" = "Atrás";
+
+/* MARK: - GolfRound (formatted stats) */
+"%.0f Cal" = "%.0f cal";
+"%.1f mi" = "%.1f mi";
+
+/* MARK: - SplashView */
+"Golf Workout Buddy" = "Golf Workout Buddy";
+"Add your time playing to your workouts" = "Añade tu tiempo de juego a tus entrenamientos";
+"Get credit for your walking and swings" = "Recibe crédito por tus caminatas y swings";

@@ -46,7 +46,7 @@ final class WorkoutManager: NSObject, ObservableObject {
             try await HealthKitManager.shared.requestAuthorization()
             startWorkout()
         } catch {
-            statusMessage = "Couldn't get Health access: \(error.localizedDescription)"
+            statusMessage = String(localized: "Couldn't get Health access: \(error.localizedDescription)")
         }
     }
 
@@ -61,7 +61,7 @@ final class WorkoutManager: NSObject, ObservableObject {
 
     private func startWorkout() {
         guard HealthKitManager.shared.isHealthDataAvailable else {
-            statusMessage = "Health data is not available on this device."
+            statusMessage = String(localized: "Health data is not available on this device.")
             return
         }
 
@@ -93,7 +93,7 @@ final class WorkoutManager: NSObject, ObservableObject {
                 guard let self else { return }
                 Task { @MainActor in
                     if let error {
-                        self.statusMessage = "Couldn't start workout: \(error.localizedDescription)"
+                        self.statusMessage = String(localized: "Couldn't start workout: \(error.localizedDescription)")
                     }
                 }
             }
@@ -103,7 +103,7 @@ final class WorkoutManager: NSObject, ObservableObject {
             motionClassifier.start()
             startTimer()
         } catch {
-            statusMessage = "Couldn't start workout session: \(error.localizedDescription)"
+            statusMessage = String(localized: "Couldn't start workout session: \(error.localizedDescription)")
         }
     }
 
@@ -167,13 +167,13 @@ final class WorkoutManager: NSObject, ObservableObject {
             guard let self else { return }
             if let error {
                 Task { @MainActor in
-                    self.statusMessage = "Couldn't finish collection: \(error.localizedDescription)"
+                    self.statusMessage = String(localized: "Couldn't finish collection: \(error.localizedDescription)")
                 }
             }
             builder.finishWorkout { _, error in
                 Task { @MainActor in
                     if let error {
-                        self.statusMessage = "Couldn't save workout: \(error.localizedDescription)"
+                        self.statusMessage = String(localized: "Couldn't save workout: \(error.localizedDescription)")
                     }
                     self.session = nil
                     self.builder = nil
@@ -240,7 +240,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
 
     nonisolated func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         Task { @MainActor in
-            self.statusMessage = "Workout session error: \(error.localizedDescription)"
+            self.statusMessage = String(localized: "Workout session error: \(error.localizedDescription)")
         }
     }
 }

@@ -70,7 +70,7 @@ struct ContentView: View {
         }
     }
 
-    private func statTile(systemImage: String, value: String, label: String, imageColor: Color? = nil) -> some View {
+    private func statTile(systemImage: String, value: String, label: LocalizedStringKey, imageColor: Color? = nil) -> some View {
         VStack(spacing: 2) {
             Image(systemName: systemImage)
                 .font(.caption2)

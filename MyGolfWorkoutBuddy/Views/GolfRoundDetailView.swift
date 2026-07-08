@@ -50,7 +50,7 @@ struct GolfRoundDetailView: View {
                         .foregroundStyle(.secondary)
                 } else {
                     if let averageHeartRate {
-                        statRow(systemImage: "heart.fill", title: "Average", value: String(format: "%.0f BPM", averageHeartRate), imageColor: .red)
+                        statRow(systemImage: "heart.fill", title: "Average", value: String(format: NSLocalizedString("%.0f BPM", comment: "Average heart rate in beats per minute"), averageHeartRate), imageColor: .red)
                     }
                     if !heartRateSamples.isEmpty {
                         heartRateChart
@@ -239,7 +239,7 @@ struct GolfRoundDetailView: View {
         let seconds = Int(timestamp.timeIntervalSince(round.startDate))
         let minutes = seconds / 60
         let remainingSeconds = seconds % 60
-        return String(format: "%d:%02d into round", minutes, remainingSeconds)
+        return String(format: NSLocalizedString("%d:%02d into round", comment: "Time offset of a swing into the round"), minutes, remainingSeconds)
     }
 }
 

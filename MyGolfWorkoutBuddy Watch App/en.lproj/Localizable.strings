@@ -1,0 +1,19 @@
+/* MyGolfWorkoutBuddy Watch App — English (base) strings */
+
+/* MARK: - ContentView */
+"Golf Workout Buddy" = "Golf Workout Buddy";
+"Start Round" = "Start Round";
+"End Round" = "End Round";
+/* Stat tile labels */
+"Swings" = "Swings";
+"Cal" = "Cal";
+"BPM" = "BPM";
+
+/* MARK: - WorkoutManager status messages (%@ is the underlying error) */
+"Couldn't get Health access: %@" = "Couldn't get Health access: %@";
+"Health data is not available on this device." = "Health data is not available on this device.";
+"Couldn't start workout: %@" = "Couldn't start workout: %@";
+"Couldn't start workout session: %@" = "Couldn't start workout session: %@";
+"Couldn't finish collection: %@" = "Couldn't finish collection: %@";
+"Couldn't save workout: %@" = "Couldn't save workout: %@";
+"Workout session error: %@" = "Workout session error: %@";

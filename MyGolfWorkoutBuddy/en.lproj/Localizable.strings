@@ -1,0 +1,45 @@
+/* MyGolfWorkoutBuddy — English (base) strings */
+
+/* MARK: - ContentView (rounds list) */
+"My Golf Rounds" = "My Golf Rounds";
+"Loading rounds…" = "Loading rounds…";
+"Health Access Needed" = "Health Access Needed";
+"Allow MyGolfWorkoutBuddy to read your workouts in the Health app to see your rounds here." = "Allow MyGolfWorkoutBuddy to read your workouts in the Health app to see your rounds here.";
+"Couldn't Load Rounds" = "Couldn't Load Rounds";
+"No Rounds Yet" = "No Rounds Yet";
+"Rounds you record on your Apple Watch will show up here." = "Rounds you record on your Apple Watch will show up here.";
+
+/* MARK: - GolfRoundDetailView */
+"Round Detail" = "Round Detail";
+"Date" = "Date";
+"Duration" = "Duration";
+"Calories Burned" = "Calories Burned";
+"Distance" = "Distance";
+"Heart Rate" = "Heart Rate";
+"Loading…" = "Loading…";
+"No heart rate data for this round." = "No heart rate data for this round.";
+"Average" = "Average";
+/* Average heart rate value, e.g. "142 BPM" */
+"%.0f BPM" = "%.0f BPM";
+"Speed" = "Speed";
+"No speed data for this round." = "No speed data for this round.";
+"Golf Swings" = "Golf Swings";
+"Swings Detected" = "Swings Detected";
+/* One detected swing, numbered, e.g. "Swing 3" */
+"Swing %lld" = "Swing %lld";
+/* Time offset of a swing into the round, e.g. "12:04 into round" */
+"%d:%02d into round" = "%d:%02d into round";
+"Shaded time was spent in a cart (paused)." = "Shaded time was spent in a cart (paused).";
+"Pinch to zoom · double-tap to reset" = "Pinch to zoom · double-tap to reset";
+"Back" = "Back";
+
+/* MARK: - GolfRound (formatted stats) */
+/* Calories burned, e.g. "612 Cal" */
+"%.0f Cal" = "%.0f Cal";
+/* Distance in miles, e.g. "3.0 mi" */
+"%.1f mi" = "%.1f mi";
+
+/* MARK: - SplashView */
+"Golf Workout Buddy" = "Golf Workout Buddy";
+"Add your time playing to your workouts" = "Add your time playing to your workouts";
+"Get credit for your walking and swings" = "Get credit for your walking and swings";
