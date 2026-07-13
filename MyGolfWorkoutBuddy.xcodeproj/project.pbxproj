@@ -899,7 +899,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyGolfWorkoutBuddy/MyGolfWorkoutBuddy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -908,6 +908,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "MyGolfWorkoutBuddy uses motion data to detect walking and swings";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -944,7 +945,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyGolfWorkoutBuddy/MyGolfWorkoutBuddy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JPVB928KRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -953,6 +954,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "MyGolfWorkoutBuddy reads your saved golf rounds to show them in your rounds list.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "MyGolfWorkoutBuddy uses motion data to detect walking and swings";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

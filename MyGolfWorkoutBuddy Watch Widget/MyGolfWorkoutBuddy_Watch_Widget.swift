@@ -4,60 +4,56 @@
 //
 //  Created by Janene Pappas on 7/8/26.
 //
+//  A quick-launch complication: shows the golf icon and opens the app (to start
+//  a round) when tapped. Static content, so no data sharing is required.
+//
 
 import WidgetKit
 import SwiftUI
 
-struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
-    }
-
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
-    }
-    
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
-        return Timeline(entries: entries, policy: .atEnd)
-    }
-
-    func recommendations() -> [AppIntentRecommendation<ConfigurationAppIntent>] {
-        // Create an array with all the preconfigured widgets to show.
-        [AppIntentRecommendation(intent: ConfigurationAppIntent(), description: "Example Widget")]
-    }
-
-//    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
-}
-
-struct SimpleEntry: TimelineEntry {
+struct GolfLauncherEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
 }
 
-struct MyGolfWorkoutBuddy_Watch_WidgetEntryView : View {
-    var entry: Provider.Entry
+/// The launcher is static, so it vends a single entry that never needs refreshing.
+struct GolfLauncherProvider: TimelineProvider {
+    func placeholder(in context: Context) -> GolfLauncherEntry {
+        GolfLauncherEntry(date: Date())
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (GolfLauncherEntry) -> Void) {
+        completion(GolfLauncherEntry(date: Date()))
+    }
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<GolfLauncherEntry>) -> Void) {
+        completion(Timeline(entries: [GolfLauncherEntry(date: Date())], policy: .never))
+    }
+}
+
+struct GolfLauncherView: View {
+    @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("Time:")
-                Text(entry.date, style: .time)
+        switch family {
+        case .accessoryRectangular:
+            HStack(spacing: 6) {
+                Image(systemName: "figure.golf")
+                    .font(.title2)
+                VStack(alignment: .leading) {
+                    Text("Golf Workout")
+                    Text("Tap to start")
+                        .foregroundStyle(.secondary)
+                }
             }
-        
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        case .accessoryInline:
+            Label("Start Round", systemImage: "figure.golf")
+        default:
+            // Circular / corner: just the icon on the standard accessory background.
+            ZStack {
+                AccessoryWidgetBackground()
+                Image(systemName: "figure.golf")
+                    .font(.title3)
+            }
         }
     }
 }
@@ -66,30 +62,23 @@ struct MyGolfWorkoutBuddy_Watch_Widget: Widget {
     let kind: String = "MyGolfWorkoutBuddy_Watch_Widget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            MyGolfWorkoutBuddy_Watch_WidgetEntryView(entry: entry)
+        StaticConfiguration(kind: kind, provider: GolfLauncherProvider()) { _ in
+            GolfLauncherView()
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .configurationDisplayName("Start Round")
+        .description("Open Golf Workout Buddy to start a round.")
+        .supportedFamilies([
+            .accessoryCircular,
+            .accessoryCorner,
+            .accessoryInline,
+            .accessoryRectangular
+        ])
     }
 }
 
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
-}
-
-#Preview(as: .accessoryRectangular) {
+#Preview(as: .accessoryCircular) {
     MyGolfWorkoutBuddy_Watch_Widget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
-}    
+    GolfLauncherEntry(date: .now)
+}

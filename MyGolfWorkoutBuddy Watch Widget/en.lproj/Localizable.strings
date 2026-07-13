@@ -1,0 +1,9 @@
+/* MyGolfWorkoutBuddy Watch Widget — English (base) strings */
+
+/* Widget gallery name + description */
+"Start Round" = "Start Round";
+"Open Golf Workout Buddy to start a round." = "Open Golf Workout Buddy to start a round.";
+
+/* Rectangular complication */
+"Golf Workout" = "Golf Workout";
+"Tap to start" = "Tap to start";

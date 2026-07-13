@@ -96,13 +96,23 @@ struct GolfRoundDetailView: View {
             speedSamples = await speed
             isLoadingSpeed = false
         }
-        .fullScreenCover(item: $zoomedChart) { chart in
-            switch chart {
-            case .heartRate:
-                ChartZoomView(title: "Heart Rate") { heartRateChartContent }
-            case .speed:
-                ChartZoomView(title: "Speed") { speedChartContent }
+        .toolbar(zoomedChart == nil ? .visible : .hidden, for: .navigationBar)
+        .overlay {
+            if let chart = zoomedChart {
+                landscapeOverlay(for: chart)
+                    .transition(.move(edge: .trailing))
+                    .zIndex(1)
             }
+        }
+    }
+
+    @ViewBuilder
+    private func landscapeOverlay(for chart: ZoomableChart) -> some View {
+        switch chart {
+        case .heartRate:
+            LandscapeChartView(title: "Heart Rate", onClose: closeChart) { heartRateChartContent }
+        case .speed:
+            LandscapeChartView(title: "Speed", onClose: closeChart) { speedChartContent }
         }
     }
 
@@ -219,13 +229,14 @@ struct GolfRoundDetailView: View {
         }
     }
 
-    /// Presents the full-screen chart without the slide-up animation, so the
-    /// detail view isn't visible behind it. The rotation to landscape happens in
-    /// `ChartZoomView.onAppear`, once the opaque cover is actually on screen.
+    /// Slides the pre-rotated landscape chart in over the detail view.
     private func openChart(_ chart: ZoomableChart) {
-        var transaction = Transaction()
-        transaction.disablesAnimations = true
-        withTransaction(transaction) { zoomedChart = chart }
+        withAnimation(.easeInOut(duration: 0.3)) { zoomedChart = chart }
+    }
+
+    /// Slides the landscape chart back out.
+    private func closeChart() {
+        withAnimation(.easeInOut(duration: 0.3)) { zoomedChart = nil }
     }
 
     private func relativeOffset(for timestamp: Date) -> String {
@@ -243,40 +254,35 @@ private enum ZoomableChart: Identifiable {
     var id: Self { self }
 }
 
-/// Forces the app (and device) into `mask`, overriding the user's Rotation Lock,
-/// so the full-screen chart can be shown in landscape and portrait restored after.
-private func forceOrientation(_ mask: UIInterfaceOrientationMask) {
-    AppDelegate.orientationLock = mask
-    guard let scene = UIApplication.shared.connectedScenes
-        .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else { return }
-    scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask))
-    var controller = scene.keyWindow?.rootViewController
-    while let presented = controller?.presentedViewController {
-        controller = presented
-    }
-    controller?.setNeedsUpdateOfSupportedInterfaceOrientations()
-}
-
-/// Presents a single chart full screen with pinch-to-zoom and drag-to-pan, plus
-/// a back chevron in the upper-left to return.
-private struct ChartZoomView<Content: View>: View {
+/// Shows a chart pre-rotated to landscape (the device itself is not rotated),
+/// sized to fill the portrait screen, with pinch-to-zoom, drag-to-pan, and a
+/// back chevron in the upper-left. Slides in as an overlay.
+private struct LandscapeChartView<Content: View>: View {
     let title: String
+    let onClose: () -> Void
     @ViewBuilder var content: Content
-
-    @Environment(\.dismiss) private var dismiss
 
     @State private var scale: CGFloat = 1
     @State private var lastScale: CGFloat = 1
     @State private var offset: CGSize = .zero
     @State private var lastOffset: CGSize = .zero
-    // Fades the chart in over the rotation so the opaque background covers the
-    // detail view immediately while the contents ease in (rather than snapping).
-    @State private var contentVisible = false
 
     var body: some View {
+        GeometryReader { geo in
+            landscapePanel
+                // Lay out at landscape dimensions, then rotate 90° and center it
+                // so the graph fills the portrait screen already in landscape.
+                .frame(width: geo.size.height, height: geo.size.width)
+                .rotationEffect(.degrees(90))
+                .position(x: geo.size.width / 2, y: geo.size.height / 2)
+        }
+        .background(Color(.systemBackground))
+        .ignoresSafeArea()
+    }
+
+    private var landscapePanel: some View {
         ZStack(alignment: .topLeading) {
             Color(.systemBackground)
-                .ignoresSafeArea()
 
             content
                 .padding(24)
@@ -286,25 +292,8 @@ private struct ChartZoomView<Content: View>: View {
                 .onTapGesture(count: 2) {
                     withAnimation(.spring) { resetTransform() }
                 }
-                .opacity(contentVisible ? 1 : 0)
 
-            VStack(alignment: .leading, spacing: 8) {
-                Button {
-                    // Rotate back to portrait first, then dismiss, so the detail
-                    // view isn't briefly revealed in landscape.
-                    forceOrientation(.portrait)
-                    Task {
-                        try? await Task.sleep(for: .seconds(0.35))
-                        dismiss()
-                    }
-                } label: {
-                    Image(systemName: "chevron.backward")
-                        .font(.title2.weight(.semibold))
-                        .padding(10)
-                        .background(.ultraThinMaterial, in: Circle())
-                }
-                .accessibilityLabel("Back")
-
+            VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.headline)
 
@@ -313,16 +302,20 @@ private struct ChartZoomView<Content: View>: View {
                     .foregroundStyle(.secondary)
             }
             .padding()
-            .opacity(contentVisible ? 1 : 0)
+
+            // Back button in the lower-left corner of the (landscape) graph.
+            Button(action: onClose) {
+                Image(systemName: "chevron.backward")
+                    .font(.title.weight(.semibold))
+                    .frame(width: 60, height: 60)
+                    .background(.ultraThinMaterial, in: Circle())
+                    .contentShape(Circle())
+            }
+            .accessibilityLabel("Back")
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+            .padding(.leading, 24)
+            .padding(.bottom, 8)
         }
-        .onAppear {
-            // Rotate only after the opaque cover is on screen, so the rotation
-            // doesn't snapshot (and flash) the detail view behind it.
-            DispatchQueue.main.async { forceOrientation(.landscape) }
-            withAnimation(.easeOut(duration: 0.45)) { contentVisible = true }
-        }
-        // Safety net in case the cover is dismissed without the back button.
-        .onDisappear { forceOrientation(.portrait) }
     }
 
     private var transformGesture: some Gesture {

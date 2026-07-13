@@ -12,6 +12,5 @@ import SwiftUI
 struct MyGolfWorkoutBuddy_Watch_WidgetBundle: WidgetBundle {
     var body: some Widget {
         MyGolfWorkoutBuddy_Watch_Widget()
-        MyGolfWorkoutBuddy_Watch_WidgetControl()
     }
 }
